@@ -1,0 +1,3854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Dawn's Kitchen — Dinner</title>
+
+<!-- iOS home-screen experience -->
+<link rel="apple-touch-icon" href="CoverImageV2.png" />
+<link rel="icon" type="image/png" href="CoverImageV2.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Dawn's Kitchen" />
+<meta name="theme-color" content="#fbf6ee" />
+<meta name="description" content="Dawn's hand-typed family recipes, organized and dressed up by her kids. With love." />
+<style>
+  /* Self-hosted fonts (replaces Google Fonts CDN). Latin subset, woff2.
+     Variable font files cover the weight ranges declared below. */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url('fonts/inter.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url('fonts/cormorant-garamond.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('fonts/cormorant-garamond-italic.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Caveat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/caveat.woff2') format('woff2');
+  }
+</style>
+<style>
+  :root {
+    --cream: #fbf6ee;
+    --cream-deep: #f3ead8;
+    --paper: #fffdf8;
+    --terracotta: #c4663d;
+    --terracotta-deep: #9a4d2a;
+    --sage: #7a8b6a;
+    --sage-deep: #556548;
+    --olive: #6b6534;
+    --gold: #c8973f;
+    --ink: #2b211a;
+    --ink-soft: #5a4a3e;
+    --ink-faint: #8a7a6b;
+    --line: #e6dcc8;
+    --shadow: 0 8px 28px rgba(95, 70, 40, 0.08);
+    --shadow-deep: 0 18px 48px rgba(95, 70, 40, 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    font-weight: 400;
+    background-image:
+      radial-gradient(circle at 10% 5%, rgba(196, 102, 61, 0.04) 0%, transparent 35%),
+      radial-gradient(circle at 90% 85%, rgba(122, 139, 106, 0.05) 0%, transparent 35%);
+    min-height: 100vh;
+  }
+
+  /* ——— Header ——— */
+  .hero {
+    position: relative;
+    padding: 80px 24px 48px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--sage), var(--terracotta));
+    background-size: 300% 100%;
+    animation: ribbon 18s linear infinite;
+  }
+
+  @keyframes ribbon {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 300% 0%; }
+  }
+
+  .eyebrow {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+  }
+
+  .title-hearts {
+    color: #d4453f;
+    font-size: 1.15rem;
+    letter-spacing: 0.6em;
+    margin: 0 0 6px;
+    padding-left: 0.6em; /* offset the trailing letter-spacing so the row centers */
+    line-height: 1;
+    user-select: none;
+  }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(4rem, 12vw, 8.5rem);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: var(--ink);
+    margin: 6px 0 12px;
+  }
+
+  h1.title .ampersand {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+  }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 auto 18px;
+  }
+
+  .dedication {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 22px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: var(--shadow);
+  }
+
+  .dedication .heart {
+    color: var(--terracotta);
+    margin: 0 4px;
+  }
+
+  /* ——— Search ——— */
+  .search-wrap {
+    max-width: 480px;
+    margin: 36px auto 0;
+    padding: 0 24px;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-box:focus-within {
+    border-color: var(--terracotta);
+    box-shadow: 0 8px 28px rgba(196, 102, 61, 0.18);
+  }
+
+  .search-box svg { flex: none; color: var(--ink-faint); }
+
+  .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-family: inherit;
+    /* 16px minimum prevents iOS Safari from auto-zooming on focus */
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .search-box input::placeholder { color: var(--ink-faint); font-style: italic; }
+
+  .vibes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 0 4px;
+    justify-content: center;
+  }
+
+  .vibes-label {
+    font-family: 'Caveat', cursive;
+    color: var(--ink-faint);
+    font-size: 1.05rem;
+    margin-right: 4px;
+  }
+
+  .vibes button {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: inherit;
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s;
+    letter-spacing: 0.3px;
+  }
+
+  .vibes button:hover {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+    transform: translateY(-1px);
+  }
+
+  .vibes button.active {
+    background: var(--sage);
+    color: white;
+    border-color: var(--sage);
+  }
+
+  /* ——— Tabs ——— */
+  .tabs {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tab {
+    background: transparent;
+    border: none;
+    padding: 14px 22px 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink-faint);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .tab:hover {
+    color: var(--terracotta);
+    transform: translateY(-1px);
+  }
+
+  .tab.active {
+    color: var(--terracotta-deep);
+    border-color: var(--terracotta);
+  }
+
+  .tab .emoji { font-size: 1.1rem; }
+  .tab .count {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    background: var(--cream-deep);
+    color: var(--ink-soft);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .tab.active .count {
+    background: var(--terracotta);
+    color: white;
+  }
+
+  /* ——— Section ——— */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: none;
+  }
+
+  .section.active { display: block; }
+  .section.search-results { display: block; }
+  .section.search-results[hidden] { display: none; }
+
+  .section-intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 16px auto 32px;
+    color: var(--terracotta);
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: "";
+    height: 1px;
+    width: 60px;
+    background: var(--line);
+  }
+
+  /* ——— Recipe Grid ——— */
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  .recipe-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-deep);
+    border-color: var(--gold);
+  }
+
+  .recipe-card .swatch {
+    height: 7px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+  }
+
+  .recipe-card.cuisine-italian .swatch { background: linear-gradient(90deg, #7a8b6a, #c4663d); }
+  .recipe-card.cuisine-mexican .swatch { background: linear-gradient(90deg, #c4663d, #c8973f); }
+  .recipe-card.cuisine-asian .swatch { background: linear-gradient(90deg, #9a4d2a, #6b6534); }
+  .recipe-card.cuisine-comfort .swatch { background: linear-gradient(90deg, #c8973f, #9a4d2a); }
+  .recipe-card.cuisine-soup .swatch { background: linear-gradient(90deg, #7a8b6a, #6b6534); }
+  .recipe-card.cuisine-light .swatch { background: linear-gradient(90deg, #7a8b6a, #c8973f); }
+  .recipe-card.cuisine-side .swatch { background: linear-gradient(90deg, #c8973f, #7a8b6a); }
+  .recipe-card.cuisine-sweet .swatch { background: linear-gradient(90deg, #c4663d, #9a4d2a); }
+
+  .recipe-card .body {
+    padding: 22px 24px 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recipe-card .tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-soft);
+    background: var(--cream-deep);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+
+  .tag.heart { color: var(--terracotta); background: rgba(196, 102, 61, 0.1); }
+
+  .recipe-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .recipe-card .meta {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+    font-size: 1.15rem;
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
+  .recipe-card .open-hint {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ——— Modal ——— */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 33, 26, 0.6);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    z-index: 100;
+    overflow-y: auto;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .modal-backdrop.open { display: flex; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .modal {
+    background: var(--paper);
+    border-radius: 18px;
+    max-width: 760px;
+    width: 100%;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal .accent {
+    height: 8px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--sage));
+  }
+
+  .modal .close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    border: none;
+    cursor: pointer;
+    color: var(--ink);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 2;
+  }
+
+  .modal .close:hover { background: var(--terracotta); color: white; transform: rotate(90deg); }
+
+  .modal-content { padding: 44px 48px 48px; }
+
+  .modal-eyebrow {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+
+  .modal .servings {
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    color: var(--terracotta-deep);
+    margin: 26px 0 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .modal h3::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .modal ul.ingredients {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 32px;
+  }
+
+  .modal ul.ingredients li {
+    padding: 7px 0 7px 22px;
+    position: relative;
+    break-inside: avoid;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .modal ul.ingredients li::before {
+    content: "·";
+    position: absolute;
+    left: 6px;
+    color: var(--terracotta);
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1;
+    top: 9px;
+  }
+
+  .modal ul.ingredients li.subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--olive);
+    font-weight: 600;
+    padding-left: 0;
+    margin-top: 8px;
+    font-size: 1.05rem;
+  }
+  .modal ul.ingredients li.subhead::before { content: ""; }
+
+  .modal ol.steps {
+    padding: 0;
+    counter-reset: step;
+    list-style: none;
+  }
+
+  .modal ol.steps li {
+    counter-increment: step;
+    padding: 12px 0 12px 48px;
+    position: relative;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .modal ol.steps li:last-child { border-bottom: none; }
+
+  .modal ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ——— Empty state ——— */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-faint);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    display: none;
+  }
+
+  /* ——— Takeout (Mom's Exhausted) ——— */
+  .takeout {
+    background:
+      radial-gradient(circle at 15% 30%, rgba(122, 139, 106, 0.10) 0%, transparent 45%),
+      radial-gradient(circle at 85% 70%, rgba(196, 102, 61, 0.10) 0%, transparent 45%),
+      var(--cream);
+    padding: 72px 24px 56px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .takeout-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .takeout-eyebrow {
+    font-family: 'Caveat', cursive;
+    color: var(--sage-deep);
+    font-size: 1.4rem;
+    display: block;
+    transform: rotate(-1deg);
+    margin-bottom: 4px;
+  }
+
+  .takeout h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .takeout-blurb {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin: 0 auto 30px;
+    max-width: 460px;
+  }
+
+  .takeout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .takeout-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 24px 18px 20px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .takeout-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage), var(--gold), var(--terracotta));
+    opacity: 0.7;
+  }
+
+  .takeout-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-deep);
+    border-color: var(--terracotta);
+  }
+
+  .takeout-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .takeout-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .takeout-link {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+    font-size: 1.1rem;
+    margin-top: 2px;
+  }
+
+  /* ——— Contact ——— */
+  .contact {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    padding: 64px 24px 56px;
+    border-top: 1px solid var(--line);
+  }
+
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-eyebrow {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+    font-size: 1.4rem;
+    display: block;
+    transform: rotate(-1.5deg);
+    margin-bottom: 4px;
+  }
+
+  .contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .contact-blurb {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 36px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-names {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-names .dot { color: var(--terracotta); font-weight: 700; }
+
+  .contact-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    background: var(--terracotta);
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-phone:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(154, 77, 42, 0.3);
+  }
+
+  .contact-text-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .contact-textarea {
+    width: 100%;
+    min-height: 96px;
+    resize: vertical;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(196, 102, 61, 0.15);
+  }
+
+  .contact-send {
+    border: none;
+    cursor: pointer;
+    background: var(--terracotta);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-send:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(154, 77, 42, 0.3);
+  }
+
+  .contact-or {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-faint);
+  }
+
+  /* ——— Shopping list ——— */
+  .modal-add-shop {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    background: var(--terracotta);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin: 4px 0 8px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .modal-add-shop:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(154, 77, 42, 0.25);
+  }
+  .modal-add-shop.added {
+    background: var(--sage);
+    color: white;
+  }
+  .modal-add-shop.added:hover { background: var(--sage-deep); }
+
+  /* "Cook Today" — sits right below the shopping-list button. Sage green so it's
+     visually distinct from the terracotta shopping action. */
+  .modal-cook-today {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    background: var(--sage);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin: 0 0 12px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .modal-cook-today:hover {
+    background: var(--sage-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(85, 101, 72, 0.25);
+  }
+  .modal-cook-today.added {
+    background: var(--sage-deep);
+    color: white;
+  }
+  .modal-cook-today.added:hover { background: var(--olive); }
+
+  /* Persistent "cooking today" tray — top-right pill that expands into a panel.
+     Stays visible above the modal so she can switch between running recipes. */
+  .cook-tray {
+    position: fixed;
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    z-index: 200;
+    font-family: 'Inter', sans-serif;
+    transition: right 0.25s ease, top 0.25s ease;
+  }
+  .cook-tray[hidden] { display: none; }
+
+  /* When the modal is open, shift left so we don't cover the modal's close X */
+  .modal-backdrop.open ~ .cook-tray { right: calc(70px + env(safe-area-inset-right, 0px)); }
+
+  .cook-tray-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 10px 24px rgba(85, 101, 72, 0.35), 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .cook-tray-pill:hover { background: var(--sage-deep); transform: translateY(-1px); }
+  .cook-tray-pill:active { transform: translateY(0); }
+  .cook-tray-pill-count {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--cream);
+    color: var(--sage-deep);
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cook-tray-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 260px;
+    max-width: calc(100vw - 32px);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 0 14px 36px rgba(95, 70, 40, 0.18), 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+  }
+  .cook-tray.open .cook-tray-panel { display: block; }
+
+  .cook-tray-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .cook-tray-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: background 0.15s;
+  }
+  .cook-tray-item:hover { background: var(--cream-deep); }
+  .cook-tray-remove {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--ink-faint);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cook-tray-remove:hover { background: rgba(196,102,61,0.12); color: var(--terracotta-deep); }
+
+  /* Section visibility — mirror the search-results pattern so display:none
+     from .section doesn't hide the shopping view. */
+  .section.shopping-section { display: block; }
+  .section.shopping-section[hidden] { display: none; }
+
+  .shopping-section {
+    max-width: 820px;
+    background:
+      linear-gradient(180deg, rgba(196,102,61,0.04) 0%, rgba(196,102,61,0) 220px),
+      var(--cream-deep);
+    border-radius: 22px;
+    margin: 24px auto 80px;
+    padding: 36px 24px 56px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .shopping-section .section-intro { margin-bottom: 26px; }
+  .shopping-section .section-intro h2 { color: var(--terracotta-deep); }
+  .shopping-section .section-divider { font-size: 1.6rem; }
+
+  .shopping-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .shopping-back:hover { color: var(--terracotta); background: rgba(196,102,61,0.08); }
+
+  /* ——— Merged-cook ("Cooking together") view ——— */
+  .section.cook-plan-section { display: block; }
+  .section.cook-plan-section[hidden] { display: none; }
+
+  .cook-plan-section {
+    max-width: 820px;
+    background:
+      linear-gradient(180deg, rgba(122,139,106,0.05) 0%, rgba(122,139,106,0) 220px),
+      var(--cream-deep);
+    border-radius: 22px;
+    margin: 24px auto 80px;
+    padding: 36px 24px 56px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  .cook-plan-section .section-intro { margin-bottom: 18px; }
+  .cook-plan-section .section-intro h2 { color: var(--sage-deep); }
+  .cook-plan-section .section-divider { font-size: 1.6rem; color: var(--sage); }
+
+  .cook-plan-meta {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+  .cook-plan-meta strong { color: var(--sage-deep); font-style: normal; font-weight: 700; }
+
+  .cook-plan-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0 28px;
+    flex-wrap: wrap;
+  }
+  .cook-plan-controls-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .cook-plan-oven-toggle {
+    display: inline-flex;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: var(--shadow);
+  }
+  .cook-plan-oven-btn {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 7px 18px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cook-plan-oven-btn.active {
+    background: var(--sage);
+    color: white;
+  }
+  .cook-plan-oven-btn:not(.active):hover { color: var(--sage-deep); }
+
+  .cook-plan-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cook-plan-step {
+    display: flex;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .cook-plan-step.checked {
+    opacity: 0.45;
+    background: var(--cream);
+  }
+  .cook-plan-step.checked .cook-plan-step-text { text-decoration: line-through; }
+
+  .cook-plan-step-check {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    background: var(--cream);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    color: transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0;
+  }
+  .cook-plan-step.checked .cook-plan-step-check {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: white;
+  }
+
+  .cook-plan-step-body { flex: 1; min-width: 0; }
+  .cook-plan-step-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .cook-plan-step-meta .recipe-tag {
+    background: var(--cream);
+    color: var(--sage-deep);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.78rem;
+  }
+  .cook-plan-step-meta .badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .cook-plan-step-meta .badge.passive { background: rgba(122,139,106,0.16); color: var(--sage-deep); }
+  .cook-plan-step-meta .badge.active  { background: rgba(196,102,61,0.14);  color: var(--terracotta-deep); }
+  /* Commit B — semi-active uses warm amber to sit between active terracotta and passive sage */
+  .cook-plan-step-meta .badge.semi    { background: rgba(200,151,63,0.22);  color: #6e5a1a; }
+  .cook-plan-step-meta .badge.oven    { background: rgba(200,151,63,0.18);  color: #7a5a18; }
+
+  .cook-plan-step-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .cook-plan-step-hint {
+    margin-top: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--sage-deep);
+    border-left: 2px solid var(--sage);
+    padding-left: 10px;
+  }
+
+  /* Commit D — scaling warning banner */
+  .cook-plan-warning {
+    background: rgba(196,102,61,0.10);
+    border: 1px solid rgba(196,102,61,0.35);
+    color: var(--terracotta-deep);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  .cook-plan-warning[hidden] { display: none; }
+
+  /* Commit E — End-of-plan kitchen-load summary */
+  .cook-plan-kitchen-load {
+    margin-top: 22px;
+    padding: 14px 18px;
+    background: var(--paper);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .cook-plan-kitchen-load[hidden] { display: none; }
+  .cook-plan-kitchen-load strong { color: var(--ink); }
+  .cook-plan-kitchen-load .load-warning { color: var(--terracotta-deep); font-weight: 600; }
+
+  /* Commit D — Mise en place: "Before you start" prep block */
+  .cook-plan-prep-block[hidden] { display: none; }
+  .cook-plan-section-h {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--sage-deep);
+    font-size: 1.4rem;
+    margin: 18px 0 12px;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+  .cook-plan-section-h:first-child { margin-top: 0; }
+
+  .cook-plan-footnote {
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: var(--paper);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .cook-plan-footnote strong { color: var(--ink); }
+
+  /* "Cook all together" button inside the cook tray */
+  .cook-tray-merge {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--sage);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .cook-tray-merge:hover { background: var(--sage-deep); }
+
+  /* Floating cart button — bottom-right, only visible when items exist */
+  .cart-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    line-height: 1;
+    box-shadow: 0 10px 28px rgba(154, 77, 42, 0.35), 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    /* respect iOS safe-area on devices with a home indicator */
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
+  }
+  .cart-fab:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(154, 77, 42, 0.45), 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .cart-fab:active { transform: translateY(0); }
+  .cart-fab[hidden] { display: none; }
+
+  .cart-fab-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--cream);
+    color: var(--terracotta-deep);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--terracotta);
+    box-sizing: border-box;
+  }
+
+  .shopping-empty {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.15rem;
+    padding: 40px 16px;
+    background: var(--paper);
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+  }
+
+  .shopping-recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+
+  .shopping-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 8px 7px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    cursor: default;
+  }
+  .shopping-pill-x {
+    border: none;
+    background: transparent;
+    color: var(--terracotta);
+    font-size: 1.1rem;
+    line-height: 1;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .shopping-pill-x:hover { background: var(--terracotta); color: white; }
+
+  .shopping-add-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .shopping-add-row input {
+    flex: 1;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .shopping-add-row input:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(196, 102, 61, 0.15);
+  }
+  .shopping-btn {
+    border: none;
+    cursor: pointer;
+    background: var(--terracotta);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .shopping-btn:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(154, 77, 42, 0.25);
+  }
+
+  .shopping-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .shopping-item {
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .shopping-item:last-child { border-bottom: none; }
+  .shopping-item:hover { background: var(--cream); }
+
+  .shopping-item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    cursor: pointer;
+  }
+
+  .shopping-item input[type="checkbox"] {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: var(--terracotta);
+    cursor: pointer;
+  }
+
+  .shopping-item-body { flex: 1; min-width: 0; }
+
+  .shopping-item-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.97rem;
+    color: var(--ink);
+    line-height: 1.45;
+    word-break: break-word;
+  }
+  .shopping-item-source {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+    margin-top: 2px;
+  }
+
+  .shopping-item.checked .shopping-item-text {
+    text-decoration: line-through;
+    color: var(--ink-faint);
+  }
+  .shopping-item.checked .shopping-item-source { opacity: 0.7; }
+
+  .shopping-item-remove {
+    flex: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-faint);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 4px 0 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .shopping-item-remove:hover { background: var(--terracotta); color: white; }
+
+  .shopping-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding-top: 4px;
+  }
+  .shopping-link {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    padding: 8px 12px;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+    transition: color 0.2s, text-decoration-color 0.2s;
+  }
+  .shopping-link:hover { color: var(--terracotta); text-decoration-color: var(--terracotta); }
+  .shopping-link.danger { color: var(--terracotta-deep); }
+
+  /* ——— Footer ——— */
+  .footer {
+    text-align: center;
+    padding: 40px 24px 60px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    background: var(--cream-deep);
+  }
+
+  .footer .heart {
+    color: var(--terracotta);
+    margin: 0 4px;
+  }
+
+  .footer .signature {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--terracotta);
+    display: block;
+    margin-top: 10px;
+    transform: rotate(-2deg);
+  }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 640px) {
+    .hero { padding: 56px 20px 36px; }
+    .modal-content { padding: 36px 26px 36px; }
+    .modal ul.ingredients { columns: 1; }
+    .tabs { gap: 6px; padding: 0 12px; }
+    .tab { padding: 10px 10px 12px; font-size: 1rem; gap: 5px; }
+    .tab .emoji { font-size: 0.95rem; }
+    .tab .count {
+      font-size: 0.6rem;
+      padding: 1px 6px;
+      letter-spacing: 0.3px;
+    }
+    .modal h2 { font-size: 1.8rem; }
+  }
+
+  @media print {
+    body * { visibility: hidden; }
+    .modal-backdrop, .modal-backdrop * { visibility: visible; }
+    .modal-backdrop { position: relative; padding: 0; background: white; }
+    .modal { box-shadow: none; max-width: 100%; }
+    .modal .close { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="title-hearts" aria-hidden="true">♥ ♥ ♥</div>
+  <span class="eyebrow">welcome to</span>
+  <h1 class="title">Dawn's <span class="ampersand">Kitchen</span></h1>
+  <p class="subtitle">A little corner of the internet for the dinners that bring everyone home — passed down, scribbled out, and made with love.</p>
+  <div class="dedication">For Mom <span class="heart">♥</span> with love</div>
+
+  <div class="search-wrap">
+    <label class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="search" type="search" placeholder="Search a recipe, ingredient, or feeling…" autocomplete="off" />
+    </label>
+    <div class="vibes" id="vibes" aria-label="Quick searches">
+      <span class="vibes-label">try:</span>
+      <button data-vibe="cozy">cozy</button>
+      <button data-vibe="low & slow">low & slow</button>
+      <button data-vibe="creamy">creamy</button>
+      <button data-vibe="spicy">spicy</button>
+      <button data-vibe="holiday">holiday</button>
+      <button data-vibe="quick & easy">quick & easy</button>
+      <button data-vibe="lemon">lemon</button>
+      <button data-vibe="chocolate">chocolate</button>
+      <button data-vibe="make-ahead">make-ahead</button>
+      <button data-vibe="nostalgic">nostalgic</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<main id="sections"></main>
+
+<section class="section search-results" id="searchResults" hidden>
+  <div class="section-intro">
+    <h2>All recipes</h2>
+    <div class="section-divider">✶</div>
+    <p id="searchSummary">Searching across every cuisine — flavor, mood, ingredient, occasion.</p>
+  </div>
+  <div class="recipe-grid" id="searchGrid"></div>
+</section>
+
+<section class="section cook-plan-section" id="cookPlanSection" hidden>
+  <button class="shopping-back" type="button" id="cookPlanBack">← Back to recipes</button>
+  <div class="section-intro">
+    <h2>🪄 Cooking together</h2>
+    <div class="section-divider">✶</div>
+    <p id="cookPlanSubtitle">A merged timeline that slots prep work into your passive windows. Check off each step as you finish.</p>
+  </div>
+
+  <div class="cook-plan-meta" id="cookPlanMeta"></div>
+
+  <div class="cook-plan-controls">
+    <span class="cook-plan-controls-label">Ovens at home:</span>
+    <div class="cook-plan-oven-toggle" role="group" aria-label="Number of ovens">
+      <button type="button" class="cook-plan-oven-btn active" data-ovens="1">1</button>
+      <button type="button" class="cook-plan-oven-btn" data-ovens="2">2</button>
+    </div>
+  </div>
+
+  <div class="cook-plan-warning" id="cookPlanWarning" hidden></div>
+  <div class="cook-plan-prep-block" id="cookPlanPrep" hidden>
+    <h3 class="cook-plan-section-h">Before you start</h3>
+    <ol class="cook-plan-steps" id="cookPlanPrepSteps"></ol>
+    <h3 class="cook-plan-section-h">Cooking</h3>
+  </div>
+  <ol class="cook-plan-steps" id="cookPlanSteps"></ol>
+  <div class="cook-plan-kitchen-load" id="cookPlanKitchenLoad" hidden></div>
+
+  <div class="cook-plan-footnote" id="cookPlanFootnote">
+    <strong>A note:</strong> times are estimates from each recipe's wording. Trust your senses over the clock — when something looks done, it's done.
+  </div>
+</section>
+
+<section class="section shopping-section" id="shoppingSection" hidden>
+  <button class="shopping-back" type="button" id="shoppingBack">← Back to recipes</button>
+  <div class="section-intro">
+    <h2>🛒 Your Shopping List</h2>
+    <div class="section-divider">✶</div>
+    <p>Everything you've added — ingredients merged, sorted, and ready for the store.</p>
+  </div>
+
+  <div class="shopping-empty" id="shoppingEmpty">
+    Nothing in your list yet. Open a recipe and tap <em>Add to Shopping List</em> to get started.
+  </div>
+
+  <div class="shopping-body" id="shoppingBody" hidden>
+    <div class="shopping-recipes" id="shoppingRecipes"></div>
+
+    <form class="shopping-add-row" id="shoppingAddForm" autocomplete="off">
+      <input type="text" id="shoppingAddInput" placeholder="Add a custom item — eggs, paper towels, etc." />
+      <button type="submit" class="shopping-btn">Add</button>
+    </form>
+
+    <ul class="shopping-items" id="shoppingItems"></ul>
+
+    <div class="shopping-actions">
+      <button class="shopping-link" id="shoppingExport" type="button">Export list</button>
+      <button class="shopping-link" id="shoppingClearChecked" type="button">Clear checked</button>
+      <button class="shopping-link danger" id="shoppingClearAll" type="button">Clear all</button>
+    </div>
+  </div>
+</section>
+
+<div class="empty" id="empty">No recipes match. Try another word, or browse a different cuisine.</div>
+
+<section class="takeout" id="takeout">
+  <div class="takeout-inner">
+    <span class="takeout-eyebrow">or, give Mom the night off —</span>
+    <h2>Mom's Exhausted</h2>
+    <p class="takeout-blurb">No judgment. The kitchen is closed tonight. Here are the three spots on speed-dial.</p>
+    <div class="takeout-grid">
+      <a class="takeout-card" href="https://www.thaiochaplymouthmi.com" target="_blank" rel="noopener">
+        <span class="takeout-emoji">🍜</span>
+        <span class="takeout-name">Thai Ocha</span>
+        <span class="takeout-link">visit site ↗</span>
+      </a>
+      <a class="takeout-card" href="https://www.guernseyfarmsdairy.com/restaurant/" target="_blank" rel="noopener">
+        <span class="takeout-emoji">🍦</span>
+        <span class="takeout-name">Guernsey</span>
+        <span class="takeout-link">visit site ↗</span>
+      </a>
+      <a class="takeout-card" href="https://hungryhowies.hungerrush.com/order/menu/233?_gl=1*1b2eb9m*_gcl_aw*R0NMLjE3Nzc4NTIwMzguQ2p3S0NBanc1TnZQQmhBb0Vpd0FfMmVnZnM2dmdOZnBiYXpUaXN1aEFQdkRQcENteEE4TkFUMG5QVm5rQXNzaWZFdFNWQTF2V0hQNTdCb0NKS2tRQXZEX0J3RQ..*_gcl_au*NDgxMjczNTM2LjE3Nzc4NTE5OTg.*_ga*MTc4Njk3Njk2MC4xNzc3ODUxOTk4*_ga_39M3V61NF4*czE3Nzc4NTE5OTgkbzEkZzEkdDE3Nzc4NTIwMzckajIxJGwwJGgw#groups" target="_blank" rel="noopener">
+        <span class="takeout-emoji">🍕</span>
+        <span class="takeout-name">Hungry Howie's</span>
+        <span class="takeout-link">visit site ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="contact-eyebrow">if you cook something good —</span>
+    <h2>Get in touch</h2>
+    <p class="contact-blurb">Questions, requests, or recipes you want added to the book? Reach out to the kids — we'd love to hear from you.</p>
+    <div class="contact-card">
+      <div class="contact-names">
+        <span>Christian</span>
+        <span class="dot">·</span>
+        <span>Maddie</span>
+        <span class="dot">·</span>
+        <span>Harrison</span>
+      </div>
+      <p class="contact-blurb">Just tell one of us next time you see us — we'd love to add it. ♥</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  Made with <span class="heart">♥</span> from Mom's hand-typed recipe book.
+  <span class="signature">— Christian, Maddie &amp; Harrison</span>
+</footer>
+
+<button class="cart-fab" id="cartFab" type="button" aria-label="Open shopping list" hidden>
+  <span aria-hidden="true">🛒</span>
+  <span class="cart-fab-badge" id="cartFabBadge">0</span>
+</button>
+
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="accent"></div>
+    <button class="close" id="closeModal" aria-label="Close">×</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<div class="cook-tray" id="cookTray" hidden>
+  <button class="cook-tray-pill" id="cookTrayPill" type="button" aria-expanded="false" aria-controls="cookTrayPanel" aria-label="Recipes cooking today">
+    <span aria-hidden="true">🍳</span>
+    <span class="cook-tray-pill-text">Cooking today</span>
+    <span class="cook-tray-pill-count" id="cookTrayCount">0</span>
+  </button>
+  <div class="cook-tray-panel" id="cookTrayPanel" role="region" aria-label="Recipes cooking today"></div>
+</div>
+
+<script>
+const CUISINES = [
+  { id: "all",       name: "All",              emoji: "✨", blurb: "Every recipe in one place — every cuisine, every cookie.", all: true },
+  { id: "italian",   name: "Italian & Pasta",  emoji: "🍝", blurb: "Comfort in a bowl, twirled around a fork." },
+  { id: "mexican",   name: "Mexican",          emoji: "🌶️", blurb: "Bright, warm, and a little bit spicy." },
+  { id: "asian",     name: "Asian-Inspired",   emoji: "🥢", blurb: "Quick, savory, and full of zing." },
+  { id: "comfort",   name: "Comfort Classics", emoji: "🏡", blurb: "The dinners you grew up with — and still crave." },
+  { id: "soup",      name: "Soups & Stews",    emoji: "🍲", blurb: "For chilly nights and weekend simmers." },
+  { id: "light",     name: "Lighter Fare",     emoji: "🥗", blurb: "Bowls and salads, fresh and easy." },
+  { id: "side",      name: "Sides & Extras",   emoji: "🥔", blurb: "The supporting cast — never an afterthought." },
+  { id: "sweet",     name: "Sweet Endings",    emoji: "🍰", blurb: "Because dinner isn't really over yet." }
+];
+</script>
+<script src="recipes.js"></script>
+<script>
+
+// ——— Curated keywords: flavor profile, mood, occasion, technique ———
+// Lets the search engine match by feel ("creamy", "cozy", "weeknight", "holiday")
+const KEYWORDS = {
+  // Italian & Pasta
+  "Short Rib Ragu with Pappardelle": "beef short-ribs ragu pappardelle braised italian sunday-dinner low-and-slow red-wine tomato comfort indulgent date-night fall winter cookefast",
+  "Spicy Garlic Beef Fettuccine in Creamy Provolone Sauce": "pasta fettuccine ground-beef creamy provolone parmesan cheesy spicy cajun garlic italian-american indulgent rich heavy-cream homemade-cooking-recipes",
+  "Spinach Fettuccine with Chicken & Artichoke Hearts": "garlicky herby nutty walnut tangy briny mediterranean weeknight date-night stir-fry green elegant quick",
+  "Lasagna Rolls": "cheesy herby vegetarian-friendly individual portions baked freezer-friendly cozy italian make-ahead family-style pasta",
+  "Sausage Lasagna": "hearty savory cheesy crowd-pleasing italian sunday-dinner baked freezer-friendly classic comfort-food pasta",
+  "Chicken Fettuccine": "creamy rich alfredo indulgent mushroom pasta-night weeknight comforting buttery decadent",
+  "Chicken Piccata": "lemony briny capers elegant light pan-sauce restaurant-style date-night zesty bright weeknight quick",
+  "Swiss Chicken Bundles": "creamy cheesy rich baked dinner-party comforting swiss-cheese individual portions vintage pasta",
+
+  // Mexican
+  "Mexican Street Corn Chicken Skillet": "elote chicken skillet cast-iron creamy queso-fresco cilantro lime tex-mex shallot tequila weeknight delish corn",
+  "Mexican Pizza (Taco Bell Copycat)": "fun kid-friendly copycat takeout taco-night beefy cheesy crispy game-day nostalgic taco-bell",
+  "Mexican Lasagna": "spicy layered baked tex-mex freezer-friendly crowd-pleasing hearty cheesy weeknight",
+  "Albondigas Soup (Mexican Meatball Soup)": "brothy warming weekend mexican homemade-meatballs hearty stew chili-warm cozy soulful",
+
+  // Asian-Inspired
+  "Pepper Steak": "beef flank-steak chinese-american stir-fry soy-sauce ginger garlic bell-peppers brown-sugar weeknight skillet rice-pairing fast delish",
+  "Chicken Fried Rice": "savory takeout-style leftover-friendly weeknight kid-friendly soy stir-fry one-pan fast easy quick",
+  "Thai Noodles": "nutty peanut spicy fast no-cook-sauce weeknight asian takeout sesame quick 20-minute",
+  "Chicken Curry with Broccoli & Cashews": "creamy spicy thai-curry savory nutty stir-fry coconut-vibe rich",
+  "Pineapple Bowls": "tropical hawaiian pineapple chicken sweet-savory soy ginger sesame fun presentation summer date-night kid-friendly bowl delish",
+
+  // Comfort Classics
+  "Sloppy Joes": "ground-beef sloppy-joes sandwich slow-cooker crockpot heirloom retro classic kid-friendly tailgate game-day after-the-game make-ahead chili-sauce relish hamburger-buns french-rolls",
+  "Crock-Pot Cube Steak": "beef cube-steak slow-cooker crockpot gravy onion-soup-mix egg-noodles low-and-slow set-and-forget weeknight-prep cozy comfort delish",
+  "Stuffed Pepper Casserole": "beef rice ground-beef stuffed-peppers tex-mex one-pan dutch-oven cheesy pepper-jack basmati tomato weeknight delish baked broiled",
+  "Pot Roast with Carrots & Potatoes": "tender savory sunday-dinner slow-cooked gravy hearty fall-apart holiday cozy winter low-and-slow",
+  "Shepherd's Pie": "cozy mashed-potatoes baked pub-style hearty leftover-friendly kid-friendly irish wintery comforting",
+  "Goulash": "one-pot hearty weeknight kid-friendly easy hungarian-american beef-and-pasta tomato cozy family quick",
+  "Chicken Pot Pie": "cozy creamy flaky-crust homestyle comfort sunday-dinner classic wintery nostalgic warming",
+  "Grandma's Meatloaf": "nostalgic savory homestyle family-favorite retro hearty sunday-dinner heirloom classic",
+  "Beef Stroganoff": "creamy savory mushroom comfort weeknight retro classic egg-noodles rich silky",
+  "Baked Chicken with Potatoes": "rustic lemony herby thyme sheet-pan easy mediterranean-vibes one-pan balsamic golden",
+  "BBQ Baby Back Ribs": "saucy smoky sweet sticky weekend low-and-slow summer fall-off-the-bone game-day grill-vibes",
+  "Breakfast Soufflé": "brunch make-ahead overnight holiday-morning savory eggy cheesy bacon mushroom strata",
+
+  // Soups & Stews
+  "Creamy Tomato Soup": "tomato basil creamy parmesan classic cozy panera-vibes 30-minute san-marzano kid-friendly grilled-cheese-pairing comfort dutch-oven natashas-kitchen",
+  "Butternut Squash Soup": "fall autumn winter butternut-squash coconut-milk curry vegetarian vegan-friendly creamy spiced apple ginger kale red-onion garnish nyt cooking puree make-ahead",
+  "Creamy Chicken & Wild Rice Soup": "creamy cozy wintery comfort hearty panera-vibes wild-rice rich silky comforting weeknight",
+  "Chicken Green Enchilada Soup": "spicy easy dump-and-go weeknight tex-mex beans rotisserie salsa-verde cozy 30-minute quick",
+  "Beef Mushroom Barley Soup": "hearty weekend brothy earthy low-and-slow winter deli-style umami nourishing",
+  "White Bean Chicken Chili": "hearty mild tangy lime southwest white-chili weeknight family corn cozy verde",
+
+  // Lighter Fare
+  "Waldorf Salad": "waldorf apple celery walnut grapes mayonnaise yogurt parsley classic creamy crunchy no-cook fresh fast lunch picnic potluck retro nyc delish",
+  "Italian Antipasto Pasta Salad": "pasta antipasto italian salami pepperoni mozzarella olives pepperoncini basil rotini summer potluck make-ahead vinaigrette no-cook crowd-pleaser kaleforniakravings",
+  "Mediterranean Farro Salad with Pepperoncini & Feta": "mediterranean farro grain pepperoncini feta chickpeas cucumber bell-peppers celery red-onion oregano vinaigrette make-ahead vegetarian potluck thekitchn iceberg radicchio chopped",
+  "Mediterranean Grain Bowl with Olives & Arugula": "mediterranean grain-bowl farro arugula kalamata-olives feta chickpeas cucumber tomato pepperoncini lemon vinaigrette chicken-optional 20-minute meal-prep one-bowl nourish-nutrition",
+  "Egg Salad": "eggs hard-boiled mayo mustard celery dill picnic sandwich lunch make-ahead kid-friendly potluck classic creamy no-cook",
+  "Grilled Corn Salad with Cilantro Vinaigrette": "grilled corn summer cookout barbecue avocado tomato pinto-beans pimientos cilantro lime fresh vegetarian potluck pioneer-woman ree-drummond",
+  "Mediterranean Quinoa Salad": "fresh briny tangy meal-prep vegetarian mediterranean summer picnic healthy chickpeas feta olives bright",
+  "Warm Grain Bowl (Panera Copycat)": "fresh balanced healthy lemony mediterranean copycat lunch bowl meal-prep hummus quinoa",
+  "Curry Chicken Salad": "creamy sweet-savory lunch sandwich picnic leftover-chicken retro raisins cashews mango quick",
+  "Cheese & Fruit Pasta Salad": "sweet savory summer picnic potluck fruity kid-friendly nectarine strawberry bright unexpected quick",
+  "Curry Apple & Celery Pasta Salad": "crunchy sweet-savory chilled lunch picnic retro fall apple cashew quick",
+  "Overnight Oats": "breakfast no-cook make-ahead healthy fast easy fruit oats jar wholesome lazy-morning quick",
+
+  // Sides & Extras
+  "Guacamole": "guac avocado dip mexican party appetizer no-cook fresh lime cilantro tomato classic chips game-day super-bowl easy 5-minute",
+  "Cilantro-Lime Black Bean Rice": "rice black-beans cilantro lime jasmine garlic mexican tex-mex side gluten-free vegetarian one-pan julias-album bright fresh",
+  "Cocktail Meatballs": "appetizer party crockpot slow-cooker meatballs grape-jelly chili-sauce sweet-and-sour holidays game-day potluck 3-ingredient super-bowl tailgate easy",
+  "Grandma's Stuffing": "holiday thanksgiving savory herby buttery classic nostalgic poultry-seasoning heirloom",
+  "Couscous Side Dish": "fast fresh mediterranean lemony garlicky light side spinach feta 15-minute quick",
+  "Potato Casserole": "cheesy crowd-pleasing holiday indulgent hash-brown retro party church-potluck funeral-potatoes",
+  "Marinade for Grilled Steak & Chicken": "tangy savory garlicky grill summer go-to umami soy worcestershire pantry-staple quick",
+  "Sweet & Spicy Marinade for Chicken": "citrusy spicy sweet grill summer jalapeno orange honey lime quick",
+
+  // Sweet Endings
+  "Rice Krispie Chocolate Chip Cookies": "cookies chocolate-chip rice-krispies krispie crispy crunchy cereal kid-friendly classic baked snack make-ahead bakery-style chewy fun",
+  "Apple Crisp": "fall autumn apple cinnamon baked dessert classic comfort kid-friendly easy fruit crisp pie-alternative warm-dessert allrecipes",
+  "5 Ingredient No Bake Chocolate Cheesecake": "chocolate nutella cheesecake no-bake make-ahead indulgent decadent oreo refrigerator showstopper party 5-ingredient",
+  "Death by Chocolate": "chocolate indulgent layered trifle party crowd-pleaser candy showstopper make-ahead potluck",
+  "Banana Bread": "cozy breakfast snack ripe-bananas chocolate-chip classic moist quick-bread weekend-baking",
+  "Easy Pumpkin Pie": "holiday fall thanksgiving classic easy spiced creamy traditional",
+  "Hugh's Thick Chocolate Chip Cookies": "chocolate bakery-style thick chewy classic chunky underbaked indulgent",
+  "Chocolate Chip Pie": "gooey warm indulgent chocolate retro a-la-mode decadent cozy",
+  "Nana's Shortbread Cookies": "buttery simple classic heirloom tea-time nostalgic delicate plain",
+  "Holiday Cookie Packages": "holiday christmas decorated festive gift frosted bow shortbread pretty",
+  "Milk Chocolate Florentine Cookies": "delicate chocolate sandwich fancy oats gift lacy elegant gift-worthy",
+  "Ozog Christmas Cookies": "holiday christmas decorated sugar-cookie frosted family-tradition nostalgic cookie-cutter heirloom",
+  "Dawn's Cake Pops": "party cute signature kid-friendly dipped chocolate gift sprinkles bite-sized celebration",
+  "Chewy Chocolate Chip Oatmeal Breakfast Cookies": "3-ingredient healthy kid-friendly easy breakfast banana wholesome no-flour quick fast",
+  "Orange Scones with Glaze": "brunch citrus bakery-style glazed weekend morning special-occasion buttermilk",
+  "Dawn's Grandma's Scones": "buttery currant heirloom tea-time brunch scottish nostalgic simple"
+};
+
+// merge keywords onto each recipe
+RECIPES.forEach(r => { r.keywords = (KEYWORDS[r.name] || ''); });
+
+// ——— Render ———
+const tabsEl = document.getElementById('tabs');
+const sectionsEl = document.getElementById('sections');
+
+CUISINES.forEach((c, i) => {
+  const count = c.all ? RECIPES.length : RECIPES.filter(r => r.cuisine === c.id).length;
+  const btn = document.createElement('button');
+  btn.className = 'tab' + (i === 0 ? ' active' : '');
+  btn.dataset.cuisine = c.id;
+  btn.innerHTML = `<span class="emoji">${c.emoji}</span>${c.name}<span class="count">${count}</span>`;
+  btn.addEventListener('click', () => activate(c.id));
+  tabsEl.appendChild(btn);
+
+  if (c.all) return; // "All" has no dedicated section — it reuses the unified grid
+
+  const section = document.createElement('section');
+  section.className = 'section';
+  section.dataset.cuisine = c.id;
+  section.innerHTML = `
+    <div class="section-intro">
+      <h2>${c.name}</h2>
+      <div class="section-divider">${c.emoji}</div>
+      <p>${c.blurb}</p>
+    </div>
+    <div class="recipe-grid"></div>
+  `;
+  sectionsEl.appendChild(section);
+
+  const grid = section.querySelector('.recipe-grid');
+  RECIPES.filter(r => r.cuisine === c.id).forEach((r, idx) => {
+    const card = document.createElement('article');
+    card.className = `recipe-card cuisine-${c.id}`;
+    card.dataset.recipeIdx = RECIPES.indexOf(r);
+    card.innerHTML = `
+      <div class="swatch"></div>
+      <div class="body">
+        <div class="tags">${(r.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        <h3>${r.name}</h3>
+        <div class="meta">${r.servings}</div>
+        <div class="open-hint">↗ open recipe</div>
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(parseInt(card.dataset.recipeIdx)));
+    grid.appendChild(card);
+  });
+});
+
+// Build a single card for the unified grid (search results + "All" view).
+// Includes a cuisine pill so you can still see where each recipe belongs.
+function buildResultCard(r) {
+  const idx = RECIPES.indexOf(r);
+  const card = document.createElement('article');
+  card.className = `recipe-card cuisine-${r.cuisine}`;
+  card.dataset.recipeIdx = idx;
+  const cuisineName = (CUISINES.find(c => c.id === r.cuisine) || {}).name || '';
+  card.innerHTML = `
+    <div class="swatch"></div>
+    <div class="body">
+      <div class="tags">
+        <span class="tag heart">${cuisineName}</span>
+        ${(r.tags || []).slice(0, 2).map(t => `<span class="tag">${t}</span>`).join('')}
+      </div>
+      <h3>${r.name}</h3>
+      <div class="meta">${r.servings}</div>
+      <div class="open-hint">↗ open recipe</div>
+    </div>
+  `;
+  card.addEventListener('click', () => openModal(idx));
+  return card;
+}
+
+function renderUnifiedGrid(recipes, summary, heading) {
+  const grid = document.getElementById('searchGrid');
+  grid.innerHTML = '';
+  recipes.forEach(r => grid.appendChild(buildResultCard(r)));
+  document.getElementById('searchSummary').textContent = summary || '';
+  const h2 = document.querySelector('#searchResults h2');
+  if (h2 && heading) h2.textContent = heading;
+}
+
+// Fisher–Yates shuffle. Returns a new array; never mutates the input.
+// Card click handlers store RECIPES.indexOf(r), so reordering the display copy
+// has no effect on modal lookups, the cart, or the shopping list (which key by recipe name).
+function shuffled(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function activate(cuisineId, scroll = true) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.cuisine === cuisineId));
+  // Selecting a category clears the search bar and any chip selection
+  document.getElementById('search').value = '';
+  document.querySelectorAll('.vibes button').forEach(x => x.classList.remove('active'));
+  document.getElementById('empty').style.display = 'none';
+  document.querySelectorAll('.recipe-card').forEach(c => c.style.display = '');
+
+  const sr = document.getElementById('searchResults');
+  const sl = document.getElementById('shoppingSection');
+  const cp = document.getElementById('cookPlanSection');
+
+  if (cuisineId === 'list') {
+    // Shopping list view: hide cuisine sections + searchResults, show shopping
+    document.querySelectorAll('#sections .section').forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+    if (sr) sr.hidden = true;
+    if (sl) sl.hidden = false;
+    if (cp) cp.hidden = true;
+    renderShoppingList();
+  } else if (cuisineId === 'cookPlan') {
+    // Merged-cook view: hide everything else, render the timeline
+    document.querySelectorAll('#sections .section').forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+    if (sr) sr.hidden = true;
+    if (sl) sl.hidden = true;
+    if (cp) cp.hidden = false;
+    renderCookPlan();
+  } else if (cuisineId === 'all') {
+    // Unified view: hide every cuisine section, populate searchResults with all recipes
+    document.querySelectorAll('#sections .section').forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+    renderUnifiedGrid(shuffled(RECIPES), `${RECIPES.length} recipes — every cuisine, every cookie. Tap any card to open the recipe.`, 'All recipes');
+    sr.hidden = false;
+    if (sl) sl.hidden = true;
+    if (cp) cp.hidden = true;
+  } else {
+    // Show one cuisine section, hide the unified grid
+    document.querySelectorAll('#sections .section').forEach(s => {
+      s.classList.toggle('active', s.dataset.cuisine === cuisineId);
+      s.style.display = ''; // clear any inline display left over from search
+    });
+    if (sr) sr.hidden = true;
+    if (sl) sl.hidden = true;
+    if (cp) cp.hidden = true;
+  }
+
+  if (scroll) {
+    // For dedicated views (shopping, cook plan), scroll to the view itself.
+    // For cuisine browsing, scroll back up to the tabs so she can re-pick.
+    let target;
+    if (cuisineId === 'list' && sl) target = sl;
+    else if (cuisineId === 'cookPlan' && cp) target = cp;
+    else target = document.querySelector('.tabs');
+    if (target) {
+      window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+    }
+  }
+}
+
+// ——— Modal ———
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modalContent');
+
+function renderIngredients(r) {
+  if (r.ingredientGroups) {
+    return `<ul class="ingredients">${r.ingredientGroups.map(g =>
+      `<li class="subhead">${g.title}</li>` + g.items.map(i => `<li>${i}</li>`).join('')
+    ).join('')}</ul>`;
+  }
+  return `<ul class="ingredients">${r.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>`;
+}
+
+function openModal(idx) {
+  const r = RECIPES[idx];
+  const inList = isRecipeInShopping(r.name);
+  const cooking = isRecipeCooking(r.name);
+  modalContent.innerHTML = `
+    <div class="modal-eyebrow">from Mom's kitchen</div>
+    <h2>${r.name}</h2>
+    <div class="servings">${r.servings}</div>
+    <button type="button" class="modal-add-shop${inList ? ' added' : ''}" id="modalAddShop" data-recipe="${r.name.replace(/"/g, '&quot;')}">
+      ${inList ? '✓ In shopping list — tap to remove' : '🛒 Add to Shopping List'}
+    </button>
+    <button type="button" class="modal-cook-today${cooking ? ' added' : ''}" id="modalCookToday" data-recipe="${r.name.replace(/"/g, '&quot;')}">
+      ${cooking ? '✓ Cooking today — tap to remove' : '🍳 Cook Today'}
+    </button>
+    <h3>Ingredients</h3>
+    ${renderIngredients(r)}
+    <h3>Instructions</h3>
+    <ol class="steps">${r.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+  `;
+  const addBtn = document.getElementById('modalAddShop');
+  addBtn.addEventListener('click', () => {
+    if (isRecipeInShopping(r.name)) {
+      removeRecipeFromShopping(r.name);
+      addBtn.classList.remove('added');
+      addBtn.textContent = '🛒 Add to Shopping List';
+    } else {
+      addRecipeToShopping(r.name);
+      addBtn.classList.add('added');
+      addBtn.textContent = '✓ In shopping list — tap to remove';
+    }
+  });
+  const cookBtn = document.getElementById('modalCookToday');
+  cookBtn.addEventListener('click', () => {
+    if (isRecipeCooking(r.name)) {
+      removeRecipeFromCooking(r.name);
+      cookBtn.classList.remove('added');
+      cookBtn.textContent = '🍳 Cook Today';
+    } else {
+      addRecipeToCooking(r.name);
+      cookBtn.classList.add('added');
+      cookBtn.textContent = '✓ Cooking today — tap to remove';
+    }
+  });
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('closeModal').addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+// ——— Search ———
+const searchEl = document.getElementById('search');
+const emptyEl = document.getElementById('empty');
+
+// Build a rich, lowercased haystack per recipe — name, cuisine, tags, keywords,
+// servings, ingredients (flat or grouped) AND step text so flavor/technique words
+// like "creamy", "browned", "simmered", "smoky" all match.
+function buildHaystack(r) {
+  const parts = [
+    r.name,
+    r.cuisine,
+    (CUISINES.find(c => c.id === r.cuisine) || {}).name || '',
+    r.servings || '',
+    (r.tags || []).join(' '),
+    r.keywords || '',
+    (r.ingredients || []).join(' '),
+    (r.ingredientGroups || []).flatMap(g => [g.title, ...g.items]).join(' '),
+    (r.steps || []).join(' ')
+  ];
+  return parts.join(' ').toLowerCase();
+}
+RECIPES.forEach(r => { r._hay = buildHaystack(r); });
+
+// Multi-term search: every space-separated token must appear somewhere in the haystack.
+function matches(r, query) {
+  const tokens = query.split(/\s+/).filter(Boolean);
+  return tokens.every(t => r._hay.includes(t));
+}
+
+// Stricter match used for "vibe chip" clicks: only consult the curated keywords list.
+// Avoids false positives like "quick cooking barley" matching the "quick" chip.
+function matchesKeywords(r, query) {
+  const tokens = query.split(/\s+/).filter(Boolean);
+  const kws = (r.keywords || '').toLowerCase();
+  const tags = (r.tags || []).join(' ').toLowerCase();
+  const haystack = `${kws} ${tags}`;
+  return tokens.every(t => haystack.includes(t));
+}
+
+// State: are we in "chip mode" (strict keyword match) or free-text mode (broad)?
+let chipMode = false;
+
+// Vibe chips: clicking one runs a stricter keyword-only search;
+// clicking the active one clears it.
+document.querySelectorAll('.vibes button').forEach(b => {
+  b.addEventListener('click', () => {
+    const v = b.dataset.vibe;
+    const isActive = b.classList.contains('active');
+    document.querySelectorAll('.vibes button').forEach(x => x.classList.remove('active'));
+    if (isActive) {
+      chipMode = false;
+      searchEl.value = '';
+    } else {
+      b.classList.add('active');
+      chipMode = true;
+      searchEl.value = v;
+    }
+    runSearch();
+    searchEl.focus();
+  });
+});
+
+searchEl.addEventListener('input', () => {
+  // Typing manually leaves chip mode and clears chip highlights unless the value matches a chip exactly
+  chipMode = false;
+  const v = searchEl.value.trim();
+  document.querySelectorAll('.vibes button').forEach(b => {
+    b.classList.toggle('active', b.dataset.vibe === v);
+  });
+  runSearch();
+});
+
+// ——— Shopping list ———
+const SHOPPING_LS_KEY = 'kitchen.shoppingList.v1';
+
+// State shape:
+//   recipes: [recipeName, ...]            insertion-ordered
+//   custom:  [{ id, text }]               insertion-ordered, id = numeric string
+//   checked: { itemKey: true }            itemKey = "r:<recipeName>#<ingredientIdx>" or "c:<id>"
+const shoppingState = { recipes: [], custom: [], checked: {} };
+
+function loadShopping() {
+  try {
+    const raw = localStorage.getItem(SHOPPING_LS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed.recipes)) shoppingState.recipes = parsed.recipes.filter(n => typeof n === 'string');
+    if (Array.isArray(parsed.custom))  shoppingState.custom  = parsed.custom.filter(c => c && typeof c.id === 'string' && typeof c.text === 'string');
+    if (parsed.checked && typeof parsed.checked === 'object') shoppingState.checked = parsed.checked;
+  } catch (e) {
+    console.warn('Shopping list: could not read localStorage', e);
+  }
+}
+
+function saveShopping() {
+  try {
+    localStorage.setItem(SHOPPING_LS_KEY, JSON.stringify(shoppingState));
+  } catch (e) {
+    console.warn('Shopping list: could not write localStorage', e);
+  }
+}
+
+function flattenRecipeIngredients(r) {
+  if (r.ingredientGroups) return r.ingredientGroups.flatMap(g => g.items || []);
+  return r.ingredients || [];
+}
+
+function isRecipeInShopping(name) {
+  return shoppingState.recipes.includes(name);
+}
+
+function addRecipeToShopping(name) {
+  if (!isRecipeInShopping(name)) {
+    shoppingState.recipes.push(name);
+    saveShopping();
+    updateCartFab();
+    if (!document.getElementById('shoppingSection').hidden) renderShoppingList();
+  }
+}
+
+function removeRecipeFromShopping(name) {
+  const i = shoppingState.recipes.indexOf(name);
+  if (i === -1) return;
+  shoppingState.recipes.splice(i, 1);
+  // Drop any checked-state for items that came from this recipe
+  Object.keys(shoppingState.checked).forEach(k => {
+    if (k.startsWith(`r:${name}#`)) delete shoppingState.checked[k];
+  });
+  saveShopping();
+  updateCartFab();
+  if (!document.getElementById('shoppingSection').hidden) renderShoppingList();
+}
+
+function addCustomItem(text) {
+  const t = String(text || '').trim();
+  if (!t) return;
+  const id = String(Date.now()) + Math.random().toString(36).slice(2, 6);
+  shoppingState.custom.push({ id, text: t });
+  saveShopping();
+  updateCartFab();
+  renderShoppingList();
+}
+
+function removeCustomItem(id) {
+  const i = shoppingState.custom.findIndex(c => c.id === id);
+  if (i === -1) return;
+  shoppingState.custom.splice(i, 1);
+  delete shoppingState.checked[`c:${id}`];
+  saveShopping();
+  updateCartFab();
+  renderShoppingList();
+}
+
+function toggleChecked(key) {
+  if (shoppingState.checked[key]) delete shoppingState.checked[key];
+  else shoppingState.checked[key] = true;
+  saveShopping();
+  renderShoppingList();
+}
+
+function clearChecked() {
+  // Drop any custom items whose key is checked; recipe items just lose their check mark
+  // (recipe items can't be removed individually — they belong to a selected recipe).
+  // Per spec: "Clear checked" removes all checked items at once.
+  const stillChecked = {};
+  // For recipe items: if checked, we drop them by keeping a "hidden" key? No — items are tied
+  // to recipes. Simplest interpretation: clearing checked removes recipe-checked marks AND
+  // removes any custom items that were checked. The recipe ingredients stay (they re-appear
+  // unchecked) until you remove the parent recipe.
+  Object.keys(shoppingState.checked).forEach(k => {
+    if (k.startsWith('c:')) {
+      const id = k.slice(2);
+      const i = shoppingState.custom.findIndex(c => c.id === id);
+      if (i !== -1) shoppingState.custom.splice(i, 1);
+    }
+  });
+  shoppingState.checked = stillChecked;
+  saveShopping();
+  updateCartFab();
+  renderShoppingList();
+}
+
+function clearAllShopping() {
+  if (!confirm('Clear the entire shopping list? This removes all recipes and custom items.')) return;
+  shoppingState.recipes = [];
+  shoppingState.custom = [];
+  shoppingState.checked = {};
+  saveShopping();
+  updateCartFab();
+  renderShoppingList();
+}
+
+// ——— Sort key heuristic ———
+// Strip leading numbers/fractions/units/descriptors so that "2 cloves garlic, minced"
+// and "1 clove garlic, crushed" both yield "garlic" and cluster together.
+const SHOP_STOP_WORDS = new Set([
+  // measurement units
+  'tsp','tsps','teaspoon','teaspoons',
+  't','tbs','tbsp','tbsps','tablespoon','tablespoons',
+  'cup','cups','c',
+  'oz','ounce','ounces',
+  'lb','lbs','pound','pounds',
+  'g','gram','grams','kg','kilogram','kilograms',
+  'ml','l','liter','liters','litre','litres',
+  'pt','pint','pints','qt','quart','quarts','gal','gallon','gallons',
+  'pinch','pinches','dash','dashes','handful','handfuls','splash','splashes','drop','drops',
+  // count words / containers
+  'clove','cloves','head','heads','can','cans','jar','jars','pkg','package','packages',
+  'container','containers','box','boxes','bottle','bottles','bag','bags','bunch','bunches',
+  'slice','slices','stick','sticks','sprig','sprigs','piece','pieces','strip','strips',
+  'sheet','sheets','loaf','loaves','ear','ears','stalk','stalks',
+  // number words
+  'one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','dozen',
+  'half','quarter',
+  // descriptors
+  'medium','large','small','extra','jumbo','mini',
+  'fresh','dried','frozen','canned','cooked','uncooked','raw','room','temperature',
+  'ground','chopped','minced','beaten','sliced','diced','crushed','cubed','grated','shredded',
+  'peeled','seeded','pitted','julienned','melted','softened','whole','halved','quartered',
+  'finely','coarsely','roughly','thinly','thickly',
+  'optional','divided','about','approximately','approx',
+  'red','green','yellow','white','black','golden',
+  // articles / connectives
+  'a','an','of','the','and','or','to','for','with','plus','into'
+]);
+
+function ingredientSortKey(line) {
+  let s = String(line || '').toLowerCase();
+  s = s.replace(/\([^)]*\)/g, ' ');                    // drop parentheticals
+  s = s.replace(/[,;].*$/, ' ');                       // drop everything after first comma/semicolon
+  // Drop leading numbers, fractions, slashes, dots, ×/x, dashes
+  s = s.replace(/^[\s,.\-–—½¼¾⅓⅔⅛⅜⅝⅞⅙⅚⅕⅖⅗⅘⅐⅑⅒0-9\/\.×x]+/, ' ');
+  let tokens = s.split(/\s+/).filter(Boolean);
+  // Strip pure-number tokens (e.g., "28" in "Two 28 oz jars")
+  tokens = tokens.filter(t => !/^\d+(\.\d+)?$/.test(t));
+  // Strip stop words
+  tokens = tokens.filter(t => !SHOP_STOP_WORDS.has(t));
+  // Tidy trailing punctuation on each token
+  tokens = tokens.map(t => t.replace(/[^\w'-]+$/g, '')).filter(Boolean);
+  let key = tokens.join(' ').trim();
+  if (!key) key = String(line || '').toLowerCase().trim();
+  return key;
+}
+
+function buildShoppingItems() {
+  const items = [];
+  let order = 0;
+  shoppingState.recipes.forEach(name => {
+    const r = RECIPES.find(x => x.name === name);
+    if (!r) return; // recipe might have been removed from data
+    flattenRecipeIngredients(r).forEach((line, idx) => {
+      items.push({
+        key: `r:${name}#${idx}`,
+        text: line,
+        source: name,
+        sortKey: ingredientSortKey(line),
+        order: order++
+      });
+    });
+  });
+  shoppingState.custom.forEach(c => {
+    items.push({
+      key: `c:${c.id}`,
+      customId: c.id,
+      text: c.text,
+      source: null,
+      sortKey: ingredientSortKey(c.text),
+      order: order++
+    });
+  });
+  items.sort((a, b) => {
+    if (a.sortKey < b.sortKey) return -1;
+    if (a.sortKey > b.sortKey) return 1;
+    return a.order - b.order;
+  });
+  return items;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, ch => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[ch]));
+}
+
+function renderShoppingList() {
+  const empty = document.getElementById('shoppingEmpty');
+  const body = document.getElementById('shoppingBody');
+  const recipesEl = document.getElementById('shoppingRecipes');
+  const itemsEl = document.getElementById('shoppingItems');
+
+  const totalItems = buildShoppingItems().length;
+  const hasAnything = shoppingState.recipes.length > 0 || shoppingState.custom.length > 0;
+
+  if (!hasAnything) {
+    empty.hidden = false;
+    body.hidden = true;
+    return;
+  }
+  empty.hidden = true;
+  body.hidden = false;
+
+  // Recipe pills
+  recipesEl.innerHTML = shoppingState.recipes.map(name => `
+    <span class="shopping-pill">
+      <span class="shopping-pill-name">${escapeHtml(name)}</span>
+      <button class="shopping-pill-x" type="button" data-recipe="${escapeHtml(name)}" aria-label="Remove ${escapeHtml(name)}">×</button>
+    </span>
+  `).join('');
+  recipesEl.querySelectorAll('.shopping-pill-x').forEach(btn => {
+    btn.addEventListener('click', () => removeRecipeFromShopping(btn.dataset.recipe));
+  });
+
+  // Items
+  const items = buildShoppingItems();
+  itemsEl.innerHTML = items.map(it => {
+    const checked = !!shoppingState.checked[it.key];
+    const sourceLine = it.source ? `<div class="shopping-item-source">from ${escapeHtml(it.source)}</div>` : '';
+    const removeBtn = it.customId ? `<button class="shopping-item-remove" type="button" data-custom-id="${escapeHtml(it.customId)}" aria-label="Remove">×</button>` : '';
+    return `
+      <li class="shopping-item${checked ? ' checked' : ''}" data-key="${escapeHtml(it.key)}">
+        <label class="shopping-item-row">
+          <input type="checkbox" ${checked ? 'checked' : ''} />
+          <div class="shopping-item-body">
+            <div class="shopping-item-text">${escapeHtml(it.text)}</div>
+            ${sourceLine}
+          </div>
+          ${removeBtn}
+        </label>
+      </li>
+    `;
+  }).join('');
+
+  itemsEl.querySelectorAll('.shopping-item').forEach(li => {
+    const cb = li.querySelector('input[type="checkbox"]');
+    cb.addEventListener('change', () => toggleChecked(li.dataset.key));
+  });
+  itemsEl.querySelectorAll('.shopping-item-remove').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      removeCustomItem(btn.dataset.customId);
+    });
+  });
+}
+
+function updateCartFab() {
+  const fab = document.getElementById('cartFab');
+  const badge = document.getElementById('cartFabBadge');
+  if (!fab || !badge) return;
+  const n = buildShoppingItems().length;
+  if (n === 0) {
+    fab.hidden = true;
+  } else {
+    fab.hidden = false;
+    badge.textContent = n;
+  }
+}
+
+function exportShoppingText() {
+  const items = buildShoppingItems();
+  const recipeItems = items.filter(it => it.source);
+  const customItems = items.filter(it => !it.source);
+  const fmt = (it) => `${shoppingState.checked[it.key] ? '☑' : '☐'} ${it.text}`;
+  let out = "Dawn's Kitchen — Shopping List\n\n";
+  if (recipeItems.length) out += recipeItems.map(fmt).join('\n') + '\n';
+  if (customItems.length) {
+    if (recipeItems.length) out += '\n';
+    out += 'Custom items:\n' + customItems.map(fmt).join('\n') + '\n';
+  }
+  return out.trim();
+}
+
+async function shareShoppingList() {
+  const text = exportShoppingText();
+  if (!text) { alert('Your shopping list is empty.'); return; }
+  if (navigator.share) {
+    try { await navigator.share({ title: 'Shopping List', text }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; /* fall through to clipboard */ }
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    alert('Copied to clipboard.');
+  } catch (e) {
+    // Last-resort fallback: prompt with the text
+    prompt('Copy your shopping list:', text);
+  }
+}
+
+// Wire up shopping form + action buttons
+document.getElementById('shoppingAddForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const input = document.getElementById('shoppingAddInput');
+  addCustomItem(input.value);
+  input.value = '';
+  input.focus();
+});
+document.getElementById('shoppingExport').addEventListener('click', shareShoppingList);
+document.getElementById('shoppingClearChecked').addEventListener('click', clearChecked);
+document.getElementById('shoppingClearAll').addEventListener('click', clearAllShopping);
+document.getElementById('shoppingBack').addEventListener('click', () => activate('all'));
+document.getElementById('cartFab').addEventListener('click', () => {
+  if (modal.classList.contains('open')) closeModal();
+  activate('list');
+});
+
+// Diagnostic helper for debugging from the console
+window.debugShoppingList = function() {
+  const raw = localStorage.getItem(SHOPPING_LS_KEY);
+  console.log('— Shopping list debug —');
+  console.log('localStorage key:', SHOPPING_LS_KEY);
+  console.log('Raw bytes (UTF-16 chars × 2):', raw ? raw.length * 2 : 0);
+  console.log('Selected recipes:', shoppingState.recipes);
+  console.log('Custom items:', shoppingState.custom);
+  console.log('Checked keys:', Object.keys(shoppingState.checked));
+  console.log('Resolved items (sorted):', buildShoppingItems());
+  return shoppingState;
+};
+
+// ——— Cook Today: a small persistent tray of recipes currently in progress ———
+// Persists across reloads via localStorage. Lets her hop between two or three
+// running recipes without re-searching for each one.
+const COOKING_LS_KEY = 'kitchen.cookingToday.v1';
+const cookingState = { recipes: [] };
+
+function loadCookingState() {
+  try {
+    const raw = localStorage.getItem(COOKING_LS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed.recipes)) {
+      cookingState.recipes = parsed.recipes.filter(n => typeof n === 'string');
+    }
+  } catch (e) {
+    console.warn('Failed to load cooking state', e);
+  }
+}
+
+function saveCookingState() {
+  try {
+    localStorage.setItem(COOKING_LS_KEY, JSON.stringify(cookingState));
+  } catch (e) {
+    console.warn('Failed to save cooking state', e);
+  }
+}
+
+function isRecipeCooking(name) {
+  return cookingState.recipes.includes(name);
+}
+
+function addRecipeToCooking(name) {
+  if (cookingState.recipes.includes(name)) return;
+  cookingState.recipes.push(name);
+  saveCookingState();
+  renderCookTray();
+}
+
+function removeRecipeFromCooking(name) {
+  const i = cookingState.recipes.indexOf(name);
+  if (i === -1) return;
+  cookingState.recipes.splice(i, 1);
+  saveCookingState();
+  renderCookTray();
+}
+
+function renderCookTray() {
+  const tray = document.getElementById('cookTray');
+  const count = document.getElementById('cookTrayCount');
+  const panel = document.getElementById('cookTrayPanel');
+  const pill = document.getElementById('cookTrayPill');
+  if (!tray || !count || !panel || !pill) return;
+  const n = cookingState.recipes.length;
+  if (n === 0) {
+    tray.hidden = true;
+    tray.classList.remove('open');
+    pill.setAttribute('aria-expanded', 'false');
+    return;
+  }
+  tray.hidden = false;
+  count.textContent = n;
+  // Render every recipe currently being cooked. Tapping the name re-opens it;
+  // tapping the × removes it from the tray. When 2+ recipes are present, show
+  // a "Cook all together" button that opens the merged timeline view.
+  const rows = cookingState.recipes.map(name => {
+    const idx = RECIPES.findIndex(r => r.name === name);
+    const safeAttr = name.replace(/"/g, '&quot;');
+    return `
+      <div class="cook-tray-row">
+        <button type="button" class="cook-tray-item" data-recipe-idx="${idx}">
+          <span aria-hidden="true">🍳</span>
+          <span>${name}</span>
+        </button>
+        <button type="button" class="cook-tray-remove" data-recipe-name="${safeAttr}" aria-label="Remove ${safeAttr} from cooking">×</button>
+      </div>`;
+  }).join('');
+  // Single-recipe checklist for 1 recipe, merged timeline for 2+.
+  const planLabel = n === 1 ? '🍳 Cook Now' : '🪄 Cook all together';
+  const planBtn = `<button type="button" class="cook-tray-merge" id="cookTrayMerge">${planLabel}</button>`;
+  panel.innerHTML = rows + planBtn;
+  panel.querySelectorAll('.cook-tray-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.recipeIdx, 10);
+      if (!Number.isFinite(idx) || idx < 0) return;
+      tray.classList.remove('open');
+      pill.setAttribute('aria-expanded', 'false');
+      openModal(idx);
+    });
+  });
+  panel.querySelectorAll('.cook-tray-remove').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeRecipeFromCooking(btn.dataset.recipeName);
+    });
+  });
+  const merge = document.getElementById('cookTrayMerge');
+  if (merge) {
+    merge.addEventListener('click', () => {
+      tray.classList.remove('open');
+      pill.setAttribute('aria-expanded', 'false');
+      if (modal.classList.contains('open')) closeModal();
+      activate('cookPlan');
+    });
+  }
+}
+
+document.getElementById('cookTrayPill').addEventListener('click', (e) => {
+  e.stopPropagation();
+  const tray = document.getElementById('cookTray');
+  const pill = document.getElementById('cookTrayPill');
+  const isOpen = tray.classList.toggle('open');
+  pill.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+// Tap outside the tray to collapse it.
+document.addEventListener('click', (e) => {
+  const tray = document.getElementById('cookTray');
+  if (!tray || tray.hidden || !tray.classList.contains('open')) return;
+  if (!tray.contains(e.target)) {
+    tray.classList.remove('open');
+    document.getElementById('cookTrayPill').setAttribute('aria-expanded', 'false');
+  }
+});
+
+loadCookingState();
+renderCookTray();
+
+// ═══════════════════════════════════════════════════════════════════════
+// Merged-cook scheduler
+// ═══════════════════════════════════════════════════════════════════════
+// Given 2+ recipes, produces a single interleaved timeline that slots active
+// steps of one recipe into passive windows (oven, simmer, rest) of another.
+//
+// Caveat: only ~40% of recipe step text has explicit times. The rest get
+// heuristic defaults. The schedule is a guide, not a guarantee — mom should
+// always trust her senses over the clock.
+
+const COOK_PLAN_DEFAULTS = {
+  activeMin: 2,
+  passiveMin: 5,
+  preheatMin: 10
+};
+
+// Passive verbs — when one of these *with an explicit time* dominates, the
+// step is hands-off (cook can do something else). Without explicit time, we
+// default to active to avoid mis-classifying quick instructions like
+// "set aside" or "let cool slightly".
+const PASSIVE_PATTERNS = [
+  /\bpreheat\b/i,
+  // "bake" the verb, but not "baking dish/sheet/pan/tray/paper/powder/soda"
+  /\bbak(e|es|ed)\b/i,
+  /\bbaking\b(?!\s+(dish|sheet|pan|tray|paper|powder|soda))/i,
+  /\broast(s|ed|ing)?\b/i,
+  /\bsimmer(s|ed|ing)?\b/i, /\bbraise(s|d)?\b/i, /\bbraising\b/i,
+  /\bmarinat(e|es|ed|ing)\b/i, /\bchill(s|ed|ing)?\b/i,
+  /\bfreez(e|es|ing)\b/i, /\brefrigerat(e|es|ed|ing)\b/i,
+  /\bcool(s|ed|ing)?\b/i, /\blet (it )?(sit|stand|rest|cool)\b/i,
+  /\bproof(s|ed|ing)?\b/i, /\brise(s|n)?\b/i,
+  /\bcover and cook\b/i, /\bslow[- ]cook/i,
+  /\brest(s|ed|ing)?\s+(for|at)\b/i
+];
+
+const OVEN_PATTERNS = [
+  /\bpreheat\b/i,
+  /\bbak(e|es|ed)\b/i,
+  /\bbaking\b(?!\s+(dish|sheet|pan|tray|paper|powder|soda))/i,
+  /\broast(s|ed|ing)?\b/i,
+  /\bbroil(s|ed|ing)?\b/i,
+  /\bbraise(s|d)?\b/i, /\bbraising\b/i,
+  /\bin the (preheated )?oven\b/i,
+  /\btransfer (it )?to the oven\b/i
+];
+
+// Commit B — semi-active modifier phrases. When one of these appears in a
+// step that otherwise classifies as passive (or has duration ≥ 5 min and
+// matches a tethering verb), upgrade to 'semi'. Per ChatGPT v2: the cook can
+// be interrupted for ≤ 3 min but must return every 3–5 min.
+const SEMI_ACTIVE_MODIFIERS = [
+  /\bstirring\s+occasionally\b/i,
+  /\bstir\s+occasionally\b/i,
+  /\bwatch[a-z]*\s+(carefully|closely)\b/i,
+  /\bkeep[a-z]*\s+an?\s+eye\s+on\b/i,
+  /\btend[a-z]*\s+to\s+(the\s+|it)\b/i,
+  /\bshake\s+(the\s+)?(pan|skillet)\s+occasionally\b/i,
+  /\bturn[a-z]*\s+(the\s+\w+\s+)?occasionally\b/i,
+  /\bbaste[a-z]*\s+every\b/i
+];
+
+function detectSemi(text) {
+  return SEMI_ACTIVE_MODIFIERS.some(re => re.test(text));
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Commit E — Equipment detection (large pot, stand mixer, burner, etc.)
+// Lighter v1 than the full Pass 6 v3 spec: focuses on the two highest-value
+// hard conflicts (largePot, standMixer) + burner count for the end-of-plan
+// summary. Skips the classifyStep signature/ctx refactor and the full
+// TimelineEntry schema rebuild — both are bigger plumbing changes that
+// don't change behavior for mom's actual corpus.
+// ═══════════════════════════════════════════════════════════════════════
+
+const LARGE_POT_EXPLICIT = /\b(large|big|heavy|deep)\s+(pot|saucepan|pan|dutch\s+oven)\b|\b(stockpot|pasta\s+pot)\b/i;
+const SMALL_POT_EXPLICIT = /\b(small|medium)\s+(saucepan|pot|skillet|pan)\b/i;
+// Task inference — "boil pasta", "make soup", "cook potatoes" implies a large pot
+// even when the vessel isn't named.
+const LARGE_POT_TASK = new RegExp(
+  '\\b(boil|cook|prepare)\\b[^.]*?\\b(pasta|spaghetti|noodles|macaroni|potatoes|corn\\s+on\\s+the\\s+cob)\\b'
+  + '|\\bblanch\\b[^.]*?\\b(vegetables|green\\s+beans|broccoli|asparagus)\\b'
+  + '|\\b(make|cook|simmer)\\b[^.]*?\\b(soup|stew|chili|stock|broth)\\b',
+  'i'
+);
+
+const STAND_MIXER = /\bstand\s*mixer|in\s+the\s+mixer|paddle\s+attachment|whisk\s+attachment|cream[a-z]*\s+(the\s+)?butter\s+(and|with)\s+(the\s+)?sugar|knead[a-z]*[^.]*?(stand\s+mixer|in\s+the\s+(mixer|machine))/i;
+const FOOD_PROCESSOR = /\bfood\s+processor|\bpulse[ds]?\b|\bprocess[a-z]*\s+until/i;
+const BLENDER = /\bblender|\bblend[a-z]*\s+until\s+smooth|immersion[- ]?blend/i;
+
+// Stovetop heat verbs — used to decide whether a step occupies a burner.
+// "bake/roast/broil" and oven-specific phrasing keep the step off the burner.
+const STOVETOP_VERB = /\b(saut[eé]|brown|sear|simmer|boil|fry|reduce|render|melt|toast|warm)\b/i;
+const OVEN_VERB     = /\b(bake|roast|broil|braise|in\s+the\s+(preheated\s+)?oven)\b/i;
+
+function detectEquipment(text) {
+  const t = text.toLowerCase();
+  const explicitLarge = LARGE_POT_EXPLICIT.test(text);
+  const explicitSmall = SMALL_POT_EXPLICIT.test(text);
+  const taskLarge = !explicitSmall && LARGE_POT_TASK.test(text);
+  const needsLargePot = explicitLarge || taskLarge;
+  const isOven = OVEN_VERB.test(text);
+  const isStovetop = !isOven && (STOVETOP_VERB.test(text) || needsLargePot);
+  return {
+    needsLargePot,
+    largePotConsumesBurner: needsLargePot && isStovetop,
+    needsBurner: isStovetop,
+    needsMixer: STAND_MIXER.test(text),
+    needsProcessor: FOOD_PROCESSOR.test(text),
+    needsBlender: BLENDER.test(text),
+    confidence: explicitLarge || explicitSmall ? 'explicit' : 'inferred'
+  };
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Step-action heuristics: realistic duration estimates when a step doesn't
+// state a time explicitly. Tried in order; the first matching pattern wins.
+// Times are midpoints of ranges from authoritative cooking sources. The
+// schedule is still a guide — these are typical, not guaranteed.
+//
+// Sources (full URLs in the project README):
+//   • Preheat times: Whirlpool support
+//       (~12-15 min for 350°F, +3-5 min per 100°F above)
+//   • Browning ground beef: The Kitchn, Taste of Home, Mom 100 (~5-10 min)
+//   • Searing short ribs / stew meat: The Kitchn "How to Braise Short Ribs",
+//       MasterClass, Tastes Better From Scratch (~3-4 min per side)
+//   • Sautéing onions until translucent/softened: The Kitchn, Love & Lemons,
+//       Cozymeal (~5-10 min)
+//   • Mincing garlic / chopping onion: The Kitchn how-tos (~1-2 min)
+//   • Creaming butter + sugar: King Arthur Baking, Spatula Desserts (~3-6 min)
+//   • Beating eggs / whisking together: Crafty Baking, Bigger Bolder Baking
+//       (~1 min, mix until just combined to avoid toughness)
+//   • Pan-searing chicken breast: The Kitchn, Hestan Cue, Budget Bytes
+//       (~5-7 min per side for ½″ thick; ~8-10 min total)
+//   • Cooking dried pasta (pappardelle / fettuccine): Pappardelle's Pasta,
+//       Safeway, Whirlpool (~8-12 min depending on thickness)
+//   • Resting meat: ThermoWorks, The Kitchn (~5-20 min depending on cut)
+// ──────────────────────────────────────────────────────────────────────────
+const STEP_HEURISTICS = [
+  // ——— Commit A: caramelize-onions MUST come before any sauté/cook-onion pattern
+  // (45 min midpoint of Serious Eats 25–60). Air-fryer preheat also goes here
+  // because "preheat air fryer" matches the generic preheat regex too.
+  // Commit B: caramelize is SEMI (tethered — needs recurring stir/heat judgment).
+  { re: /\bpreheat[a-z]*\s+(the\s+)?air\s*fryer/i,             min: 3,  active: false },
+  { re: /\bcaramelize[a-z]*\s+(the\s+)?onion/i,                min: 45, active: false, attention: 'semi' },
+  { re: /\bcaramelize[a-z]*\b/i,                               min: 25, active: false, attention: 'semi' },
+
+  // ——— Preheating: bumped values from Pass 1 (Whirlpool + The Kitchn — real
+  // steady-state preheat is 18–25 min for typical home ovens, not 10–15).
+  { re: /\bpreheat[^.]*?\b(450|475|500)\b/i, min: 27, active: false },
+  { re: /\bpreheat[^.]*?\b425\b/i,           min: 25, active: false },
+  { re: /\bpreheat[^.]*?\b400\b/i,           min: 22, active: false },
+  { re: /\bpreheat[^.]*?\b375\b/i,           min: 20, active: false },
+  { re: /\bpreheat[^.]*?\b350\b/i,           min: 18, active: false },
+  { re: /\bpreheat[^.]*?\b(300|325)\b/i,     min: 15, active: false },
+  { re: /\bpreheat\b/i,                       min: 18, active: false },
+
+  // ——— Browning / searing larger cuts: 3-4 min per side × multiple sides
+  { re: /\bbrown[a-z]*\s+(the\s+)?(short ribs?|stew meat|chuck|roast|beef cubes)\b/i, min: 10, active: true },
+  { re: /\bsear[a-z]*\s+(the\s+)?(short ribs?|stew meat|chuck|roast|beef cubes)\b/i,  min: 10, active: true },
+  { re: /\bbrown[a-z]*\s+(the\s+)?(chicken|pork|lamb)\b/i, min: 8, active: true },
+  // Browning ground meat / sausage: single layer in a wide pan
+  { re: /\bbrown[a-z]*\s+(the\s+)?(ground beef|hamburger|ground turkey|ground pork|meat)\b/i, min: 7, active: true },
+  { re: /\bbrown[a-z]*\s+(the\s+)?(sausage|chorizo|bacon)\b/i, min: 6, active: true },
+  // Commit A — narrow to verb usage. "browned bits" / "browned the meat" =
+  // descriptive noun, not an instruction. Require an object/article after.
+  { re: /\bbrown[a-z]*\s+(the|a|some|it|them|until|in|over)\b/i, min: 6, active: true },
+  { re: /\bsear[a-z]*\s+(the|a|some|it|them|until|in|over)\b/i,  min: 5, active: true },
+
+  // ——— Pan-cooking chicken breast
+  { re: /\b(pan[- ]sear|cook)[a-z]*\s+(the\s+)?chicken breast/i, min: 12, active: true },
+  { re: /\bcook[a-z]*\s+(the\s+)?chicken\s+(through|until cooked)/i, min: 10, active: true },
+
+  // ——— Sautéing aromatics / softening onions
+  { re: /\b(saut[eé]|cook)[a-z]*\s+(the\s+)?onion[s]?[^.]*?(soft|translucent|tender)/i, min: 6, active: true },
+  { re: /\bcook[a-z]*\s+(the\s+)?onion[s]?\s+(and\s+garlic\s+)?until\s+(soft|tender|translucent|fragrant)/i, min: 6, active: true },
+  { re: /\b(saut[eé]|cook)[a-z]*[^.]*?until\s+fragrant\b/i, min: 1, active: true },  // Pass 1: 2→1 (The Kitchn: ~30 sec)
+  { re: /\b(saut[eé]|cook)[a-z]*[^.]*?until\s+(soft|softened|translucent|tender|wilted)/i, min: 5, active: true },
+  { re: /\b(saut[eé])[a-z]*\b/i, min: 5, active: true },
+
+  // ——— Pasta: total cook time after water is boiling
+  { re: /\b(cook|boil)[a-z]*\s+(the\s+)?pappardelle/i, min: 9,  active: false },
+  { re: /\b(cook|boil)[a-z]*\s+(the\s+)?fettuccine/i,  min: 11, active: false },
+  { re: /\b(cook|boil)[a-z]*\s+(the\s+)?(spaghetti|linguine|bucatini)/i, min: 10, active: false },
+  { re: /\b(cook|boil)[a-z]*\s+(the\s+)?(penne|rigatoni|ziti|rotini|fusilli|macaroni|elbow)/i, min: 10, active: false },
+  { re: /\b(cook|boil)[a-z]*\s+(the\s+)?(pasta|noodles)\s+al\s+dente/i, min: 10, active: false },
+  { re: /\bal\s+dente\b/i, min: 10, active: false },
+
+  // ——— Knife work (prep)
+  { re: /\bmince[a-z]*\s+(the\s+)?garlic\b/i, min: 1, active: true },
+  { re: /\bmince[a-z]*\b/i, min: 2, active: true },
+  { re: /\b(chop|dice|slice)[a-z]*\s+(the\s+)?onion/i, min: 2, active: true },
+  { re: /\b(chop|dice|slice)[a-z]*\s+(the\s+)?(vegetables|veggies|peppers|carrots|celery)/i, min: 4, active: true },
+
+  // ——— Baking-batter prep
+  { re: /\bcream[a-z]*\s+(the\s+)?butter\s+(and|with)\s+(the\s+)?sugar/i, min: 5, active: true, attention: 'semi' },  // Commit B: mixer engaged, hands free, but must monitor texture
+  { re: /\bbeat[a-z]*\s+(in\s+)?(the\s+)?eggs?\b/i, min: 1, active: true },
+  { re: /\bwhisk[a-z]*\s+(together|the)/i, min: 1, active: true },
+  { re: /\bmix[a-z]*\s+(until|just)\s+(combined|smooth|just\s+combined)/i, min: 1, active: true },
+  { re: /\bfold[a-z]*\s+in\b/i, min: 1, active: true },
+  { re: /\bstir[a-z]*\s+(to\s+)?combine/i, min: 1, active: true },
+
+  // ——— Resting / cooling (passive windows)
+  { re: /\brest[a-z]*\s+.*?(roast|brisket|whole turkey|whole chicken)/i, min: 20, active: false },
+  { re: /\brest[a-z]*\s+.*?(steak|chops|chicken breast)/i, min: 8, active: false },
+  { re: /\bcool[a-z]*\s+(completely|to room temperature)/i, min: 30, active: false },
+  { re: /\bcool[a-z]*\s+slightly/i, min: 8, active: false },
+  { re: /\bcool[a-z]*\s+(in\s+the\s+pan|on\s+a\s+(wire\s+)?rack)/i, min: 12, active: false },
+  { re: /\blet[a-z]*\s+(it\s+)?(cool|sit|stand|rest)/i, min: 8, active: false },
+
+  // ——— Boiling water from cold (for pasta etc.)
+  { re: /\bbring[a-z]*\s+.*?(water|pot|broth)\s+to\s+a\s+(rolling\s+)?boil/i, min: 8, active: false },
+
+  // ——— Sauce making and reducing (semi-passive — stir occasionally)
+  // The "thicken" alternative is bare so it also catches "thickens", "thickened"
+  { re: /\bsimmer[a-z]*\s+(gently|slowly)[^.]*?(thicken|reduce)/i, min: 7, active: false },
+  { re: /\bsimmer[a-z]*[^.]*?(until\s+(thicken|reduce)|\bthicken[a-z]*\s+into)/i, min: 5, active: false },
+  { re: /\breduce[a-z]*\s+(by|until\s+thicken)/i, min: 6, active: false },
+  { re: /\b(make|prepare)\s+(the\s+)?(sauce|dressing|vinaigrette|b[eé]chamel|gravy|filling)/i, min: 3, active: true },
+  { re: /\bblend[a-z]*\s+in\s+(the\s+)?flour\b/i, min: 2, active: true },  // roux step
+  { re: /\bmelt[a-z]*\s+(the\s+)?butter\b/i, min: 2, active: true },
+  { re: /\bstir[a-z]*\s+in[^.]*?until\s+(melt|smooth|combined|incorporated)/i, min: 2, active: true },
+  { re: /\b(heat|warm)\s+through\b/i, min: 3, active: true },
+
+  // ——— Layering / spreading / assembly
+  { re: /\b(layer|stack)[a-z]*\s+.*?(noodles|tortillas|lasagna)/i, min: 5, active: true },
+  { re: /\bspread[a-z]*\s+.*?(filling|sauce|mixture|frosting)/i, min: 3, active: true },
+  { re: /\bspread[a-z]*\s+.*?(in|over|on)\s+(the\s+)?(bottom|pan|dish|baking)/i, min: 1, active: true },
+  { re: /\broll\s+up\b/i, min: 4, active: true },
+  { re: /\bpour\s+.*?(into|over)\b/i, min: 1, active: true },
+  { re: /\bcombine[a-z]*\s+.*?in\s+a\s+(large\s+|medium\s+|small\s+)?bowl/i, min: 2, active: true },
+  { re: /\bstir\s+together\b/i, min: 2, active: true },
+  { re: /\bsmooth[a-z]*\s+.*?(sauce|mixture)\s+over\b/i, min: 1, active: true },
+
+  // ——— Coating / dredging meat
+  { re: /\b(dredge|dip|coat)[a-z]*\s+.*?(flour|batter|breadcrumbs|breading)/i, min: 3, active: true },
+  { re: /\bpound[a-z]*\s+.*?(thickness|flat|thin|½|1\/2)/i, min: 4, active: true },
+  { re: /\bseason[a-z]*\s+.*?(salt|pepper|both sides)/i, min: 1, active: true },
+
+  // ——— Mashing / pureeing
+  { re: /\bmash[a-z]*\s+(the\s+)?(cooked\s+)?potatoes/i, min: 3, active: true },
+  { re: /\bpur[eé]e[a-z]*\b/i, min: 3, active: true },
+
+  // ——— Egg cooking on stovetop
+  { re: /\bscramble[a-z]*\s+(the\s+)?eggs?/i, min: 4, active: true },
+
+  // ——— "Cook pasta according to package" — generic 10 min
+  { re: /\bcook\s+(the\s+)?(pasta|noodles)\s+according\s+to\s+(the\s+)?package/i, min: 10, active: false },
+  // Pass 1: include the rest time (Kitchn 18-20 simmer + 10 rest = ~28; conservative 25)
+  { re: /\bcook\s+(the\s+)?rice\s+according\s+to\s+(the\s+)?(package|direction)/i, min: 25, active: false },
+  { re: /\bcook\s+(the\s+)?(quinoa)\s+according\s+to\s+(the\s+)?(package|direction)/i, min: 20, active: false },
+  { re: /\bcook\s+(the\s+)?(farro|barley|orzo)\s+according\s+to\s+(the\s+)?(package|direction)/i, min: 28, active: false },
+  { re: /\bcook\s+(the\s+)?bacon\s+according\s+to\s+(the\s+)?package/i, min: 8, active: true },
+
+  // ——— Toasting bread / buns / nuts
+  { re: /\btoast[a-z]*\s+.*?(bread|rolls|buns|nuts|seeds)/i, min: 4, active: true },
+
+  // ——— Cook until cooked through / to temperature
+  { re: /\bcook[a-z]*[^.]*?(internal\s+temp|thermometer|165°|until\s+done|cooked\s+through|no\s+longer\s+pink)/i, min: 8, active: true },
+
+  // ——— Slow cooker (when no time given — most recipes say explicitly)
+  { re: /\bslow[- ]cook[a-z]*[^.]*?\blow\b/i, min: 420, active: false },  // ~7 hrs on low
+  { re: /\bslow[- ]cook[a-z]*[^.]*?\bhigh\b/i, min: 210, active: false }, // ~3.5 hrs on high
+
+  // ——— Transfer to oven / put in oven (quick action)
+  { re: /\btransfer\s+(it|them)?\s*to\s+the\s+oven\b/i, min: 1, active: true },
+  { re: /\b(return|put|place)[a-z]*\s+.*?(to|in|into)\s+the\s+(pot|skillet|pan|dish|oven)\b/i, min: 1, active: true },
+
+  // ——— Drain / strain / serve / garnish — quick, hands-on
+  { re: /\b(drain|strain|toss|serve|garnish|sprinkle|top with|divide)\b/i, min: 1, active: true },
+
+  // ——— Marinating (passive, long)
+  { re: /\bmarinate[a-z]*\s+.*?(overnight|all day)/i, min: 480, active: false },
+  { re: /\bmarinate[a-z]*[^.]*?(\b1\s+hour\b|\b60\s+min)/i, min: 60, active: false },
+  { re: /\bmarinate[a-z]*\b/i, min: 30, active: false },
+
+  // ——— Shape/form/assemble (allow adjectives between "a" and the shape noun)
+  { re: /\bshape[a-z]*[^.]{0,40}\b(loaf|loaves|balls|patties|rounds|disks)/i, min: 4, active: true },
+  { re: /\bassemble[a-z]*\s+(the\s+)?(bowl|salad|dish|lasagna|casserole)/i, min: 4, active: true },
+
+  // ——— Multi-action prep — "chop all veggies", "prep all ingredients"
+  { re: /\b(chop|prepare|prep)\s+all\b/i, min: 5, active: true },
+  { re: /\bcut\s+(the\s+)?eggs?\s+in\s+half/i, min: 2, active: true },
+
+  // ——— Common "add X and stir" / final-touch steps
+  { re: /\badd[a-z]*\s+.*?\s+and\s+stir\b/i, min: 1, active: true },
+  { re: /\bremove\b/i, min: 1, active: true },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // Commit A — new patterns from heuristicupdate1.md passes 2-4, 9, 11.
+  // Order matters: more-specific first (first-match-wins in applyHeuristic).
+  // ═══════════════════════════════════════════════════════════════════
+
+  // ——— Pass 9 doneness phrases (passive even without explicit time)
+  { re: /\buntil\s+juices?\s+run\s+clear/i,                          min: 10, active: false },
+  { re: /\buntil\s+firm\s+to\s+the\s+touch/i,                        min: 8,  active: false },
+  { re: /\buntil\s+tender\s+when\s+pierced/i,                        min: 30, active: false },
+  { re: /\buntil\s+(easily\s+)?flakes?\s+(with\s+a\s+fork|easily)/i, min: 6,  active: false },
+  { re: /\buntil\s+(the\s+)?meat\s+(pulls?|shreds?)\s+(apart|easily)/i, min: 60, active: false },
+
+  // ——— Pass 4 baking doneness (passive, oven)
+  { re: /\buntil\s+(a\s+)?toothpick\s+comes\s+out\s+clean/i,         min: 25, active: false },
+  { re: /\buntil\s+(the\s+)?edges?\s+are\s+golden/i,                 min: 20, active: false },
+  { re: /\buntil\s+(the\s+)?(top|center)\s+is\s+(just\s+)?set/i,     min: 20, active: false },
+  { re: /\buntil\s+(the\s+)?cake\s+springs?\s+back/i,                min: 25, active: false },
+
+  // ——— Pass 3 Instant Pot / pressure cooker
+  { re: /\b(natural\s+(pressure\s+)?release|let\s+(the\s+)?pressure\s+release\s+naturally|npr\b)/i, min: 12, active: false },
+  { re: /\b(quick\s+release|manually\s+release\s+(the\s+)?pressure|qr\b)/i, min: 1, active: true },
+  { re: /\b(heat|preheat)\s+(the\s+)?instant\s*pot/i,                min: 3,  active: false },
+
+  // ——— Pass 3 air fryer (preheat handled at top); shake basket interrupt
+  { re: /\bshake\s+(the\s+)?(basket|tray)\s+halfway/i,               min: 1,  active: true  },
+
+  // ——— Pass 3 sous vide bath warmup
+  { re: /\b(bring|heat)\s+(the\s+)?(sous\s*vide|water\s*bath)\s+to\s+(temp|temperature|\d{2,3})/i, min: 25, active: false },
+
+  // ——— Pass 3 slow cooker mode shifts
+  { re: /\b(switch|increase|turn)\s+(to|the\s+heat\s+to)\s+high\b/i, min: 60, active: false },
+  { re: /\bkeep\s+warm\s+(setting|until\s+serving)/i,                min: 60, active: false },
+
+  // ——— Pass 3 mixer (must precede the generic Pass 4 mixer entries)
+  { re: /\bbeat[a-z]*\s+(on\s+(high|medium))[^.]*?until\s+(light|fluffy|pale)/i, min: 4, active: false },
+
+  // ——— Pass 3 food processor / blender
+  { re: /\bpulse[a-z]*\s+(\d+\s+times|until)/i,                      min: 1,  active: true  },
+  { re: /\bprocess[a-z]*\s+until\s+(smooth|combined|paste)/i,        min: 2,  active: true  },
+  { re: /\bblend[a-z]*\s+until\s+smooth/i,                           min: 1,  active: true  },
+  { re: /\b(immersion[- ]?blend|hand[- ]?blend)/i,                   min: 2,  active: true  },
+
+  // ——— Pass 3 grill — note: gas grill preheat must come before generic preheat-grill
+  { re: /\bpreheat[a-z]*\s+(the\s+)?charcoal\s+grill/i,              min: 30, active: false },
+  { re: /\bpreheat[a-z]*\s+(the\s+)?(gas\s+)?grill\b/i,              min: 12, active: false },
+
+  // ——— Pass 3 microwave (soften butter)
+  { re: /\bsoften[a-z]*\s+(the\s+)?butter\s+(in|with)\s+(the\s+)?microwave/i, min: 1, active: true },
+
+  // ——— Pass 2 addendum — wet-heat & food-safety long passive blocks
+  { re: /\bblanch(es|ed|ing)?\b[^.]*?(shock|ice\s+bath|cold\s+water)/i,    min: 4,  active: true  },
+  { re: /\bsteam[a-z]*\s+(the\s+)?(broccoli|asparagus|spinach|greens|peas)/i, min: 5,  active: false },
+  { re: /\bsteam[a-z]*\s+(the\s+)?(potatoes|carrots|squash|roots)/i,         min: 14, active: false },
+  { re: /\bsteam[a-z]*\b/i,                                                  min: 10, active: false },
+  { re: /\bparboil[a-z]*\b/i,                                                min: 8,  active: false },
+  { re: /\bpoach[a-z]*\s+(the\s+)?(eggs?)\b/i,                               min: 4,  active: true  },
+  { re: /\bpoach[a-z]*\s+(the\s+)?(chicken|fish|salmon|cod|pork)\b/i,        min: 12, active: true  },
+  { re: /\bbroil[a-z]*\b/i,                                                  min: 8,  active: true  },  // Pass 2 addendum: ACTIVE (watch closely)
+  { re: /\bgrill[a-z]*\s+(the\s+)?(chicken\s+breast|chicken)/i,              min: 12, active: true  },
+  { re: /\bgrill[a-z]*\s+(the\s+)?(burger|steak|pork\s+chop)/i,              min: 8,  active: true  },
+
+  // ——— Pass 2 addendum — bloom spices (very short, high burn risk)
+  { re: /\bbloom[a-z]*\s+(the\s+)?spices?/i,                                 min: 1,  active: true  },
+  { re: /\bfry[a-z]*\s+(the\s+)?spices?\s+(in\s+oil|until\s+fragrant)/i,     min: 1,  active: true  },
+
+  // ——— Pass 2 addendum — long passive: soften butter / thaw / soak / brine
+  { re: /\bsoften[a-z]*\s+(the\s+)?butter\s+(at\s+room\s+temperature|on\s+the\s+counter|to\s+room\s+temp)/i, min: 60, active: false },
+  { re: /\bbring[a-z]*\s+(the\s+)?(butter|eggs?|cream\s+cheese)\s+to\s+room\s+temperature/i, min: 60, active: false },
+  { re: /\bthaw[a-z]*\s+(the\s+)?(chicken|meat|fish|shrimp)\s+(in\s+(the\s+)?refrigerator|overnight)/i, min: 720, active: false },
+  { re: /\bthaw[a-z]*\s+(the\s+)?(chicken|meat|fish|shrimp)\s+(in\s+cold\s+water|under\s+running\s+water)/i, min: 75, active: false },
+  { re: /\bsoak[a-z]*\s+(the\s+)?(beans|lentils|chickpeas|rice)\s+overnight/i, min: 600, active: false },
+  { re: /\bquick[- ]soak[a-z]*\s+(the\s+)?(beans|lentils)/i,                 min: 60, active: false },
+  { re: /\bbrine[a-z]*\s+overnight/i,                                        min: 720, active: false },
+  { re: /\bbrine[a-z]*\s+(the\s+)?(chicken|turkey|pork)\b/i,                 min: 90, active: false },
+
+  // ——— Pass 2 — knife/quick prep (peel-and-dice combo BEFORE generic chop)
+  { re: /\bpeel\s+and\s+(dice|chop|cube|slice)/i,                            min: 5,  active: true  },
+  { re: /\bde[- ]?vein[a-z]*\s+(the\s+)?shrimp/i,                            min: 8,  active: true  },
+  { re: /\bshred[a-z]*\s+(the\s+)?(cooked\s+)?(chicken|pork|beef|lettuce|cheese)/i, min: 4, active: true },
+  { re: /\bzest[a-z]*\s+(the\s+)?(lemon|lime|orange|citrus)/i,               min: 1,  active: true  },
+  { re: /\bjuice[a-z]*\s+(the\s+)?(lemon|lime|orange|citrus)/i,              min: 1,  active: true  },
+  { re: /\bgrease[a-z]*\s+(the\s+)?(pan|dish|sheet|skillet)/i,               min: 1,  active: true  },
+
+  // ——— Pass 2 — knead (stand mixer variant BEFORE generic knead)
+  { re: /\bknead[a-z]*[^.]*?(stand\s+mixer|in\s+the\s+(mixer|machine))/i,    min: 5, active: false },
+  { re: /\bknead[a-z]*\b/i,                                                  min: 9, active: true  },
+
+  // ——— Pass 2 — proof / first rise
+  { re: /\b(proof|first\s+rise|bulk\s+ferment|let\s+(it\s+)?rise)\b/i,       min: 75, active: false },
+
+  // ——— Pass 2 — whip / soft peaks
+  { re: /\bwhip[a-z]*\s+(the\s+)?(cream|heavy\s+cream)/i,                    min: 4, active: true  },
+  { re: /\bto\s+(stiff|soft|medium)\s+peaks/i,                               min: 4, active: true  },
+
+  // ——— Pass 2 — sauce making / reductions (passive — semi will be added in Commit B)
+  { re: /\bdeglaz[a-z]+\b/i,                                                 min: 1,  active: true  },
+  { re: /\breduce[a-z]*\s+(by\s+half|by\s+a?\s*third|by\s+two[- ]thirds)/i,  min: 8, active: false },
+  { re: /\breduce[a-z]*[^.]*?until\s+(thicken|coats?\s+the\s+back|syrup)/i,  min: 8, active: false },
+  { re: /\brender[a-z]*\s+(the\s+)?(bacon|pancetta|fat|chorizo)\b/i,         min: 8, active: false, attention: 'semi' },
+  { re: /\btemper[a-z]*\s+(the\s+)?(eggs?|yolks?|chocolate)\b/i,             min: 2, active: true  },
+  { re: /\bstir[a-z]*\s+in[^.]*?until\s+(melt|smooth|combined|incorporated)/i, min: 2, active: true },
+  { re: /\b(heat|warm)\s+through\b/i,                                        min: 3, active: true  },
+
+  // ——— Pass 2 — finishing touches
+  { re: /\bscore[a-z]*\s+(the\s+)?(loaf|crust|surface|fat|skin)/i,           min: 1, active: true  },
+  { re: /\btruss[a-z]*\b/i,                                                  min: 4, active: true  },
+  { re: /\bglaze[a-z]*\s+(the\s+|with\s+)/i,                                 min: 2, active: true  },
+  { re: /\bbaste[a-z]*\b/i,                                                  min: 1, active: true  },
+  { re: /\bskim[a-z]*\s+(the\s+)?(foam|fat|surface)/i,                       min: 2, active: true  },
+  { re: /\bemulsif[a-z]+\b/i,                                                min: 2, active: true  },
+
+  // ——— Pass 4 — Asian stir-fry
+  { re: /\bstir[- ]?fry[a-z]*[^.]*?(crisp[- ]tender|just\s+tender)/i,        min: 4, active: true  },
+  { re: /\btoss[a-z]*\s+to\s+coat/i,                                         min: 1, active: true  },
+  { re: /\bvelvet[a-z]*\s+(the\s+)?(chicken|shrimp|beef|pork)/i,             min: 3, active: true  },
+  { re: /\bbloom[a-z]*\s+(the\s+)?(aromatics|garlic|ginger|seeds?)\s+(in\s+(the\s+)?oil|until\s+fragrant)/i, min: 1, active: true },
+
+  // ——— Pass 4 — French sauces / technique
+  { re: /\b(make|cook)\s+(the\s+|a\s+)?roux/i,                               min: 5, active: true  },
+  { re: /\bmonter\s+au\s+beurre\b/i,                                         min: 1, active: true  },
+  { re: /\bmount[a-z]*\s+(the\s+)?(sauce|liquid)\s+with\s+(the\s+)?butter/i, min: 1, active: true  },
+  { re: /\bstrain[a-z]*[^.]*?(fine[- ]?mesh|sieve|chinois)/i,                min: 2, active: true  },
+  { re: /\b(hollandaise|b[eé]arnaise)\b/i,                                   min: 8, active: true },  // Commit B: ACTIVE (constant whisk)
+  { re: /\b(p[aâ]te\s+bris[eé]e|shortcrust)\s+(dough\s+)?(rest|chill)/i,     min: 30, active: false },
+
+  // ——— Pass 4 — baking prep
+  { re: /\bbloom[a-z]*\s+(the\s+)?yeast/i,                                   min: 8,  active: false },
+  { re: /\bbloom[a-z]*\s+(the\s+)?gelatin/i,                                 min: 5,  active: false },
+  { re: /\bsift[a-z]*\s+(together\s+)?(the\s+)?(dry|flour|cocoa)/i,          min: 2,  active: true  },
+  { re: /\bbrush[a-z]*\s+with\s+(an?\s+)?egg\s+wash/i,                       min: 1,  active: true  },
+  { re: /\bdust[a-z]*\s+with\s+(flour|powdered\s+sugar|cocoa)/i,             min: 1,  active: true  },
+
+  // ——— Pass 4 — bread-specific
+  { re: /\bstretch\s+and\s+fold/i,                                           min: 1, active: true  },
+  { re: /\bshape[a-z]*\s+into\s+a\s+(boule|b[aâ]tard|round|log)/i,           min: 2, active: true  },
+
+  // ——— Pass 4 — Italian finishing
+  { re: /\bsalt[a-z]*\s+(the\s+)?(pasta\s+)?water\s+(generously|well|liberally|like\s+the\s+sea)/i, min: 1, active: true },
+  { re: /\breserve[a-z]*\s+(\d+\s+)?(cup\s+)?(of\s+)?(pasta|cooking)\s+water/i, min: 1, active: true },
+  { re: /\b(finish|drizzle)\s+with\s+(extra[- ]virgin\s+)?olive\s+oil/i,     min: 1, active: true  },
+  { re: /\btoss[a-z]*\s+(off\s+the\s+heat|with\s+(the\s+)?sauce)/i,          min: 1, active: true  },
+
+  // ——— Pass 4 — Mexican / Indian
+  { re: /\bchar[a-z]*\s+(the\s+)?tortillas?/i,                               min: 2, active: true  },
+  { re: /\btadka\b/i,                                                        min: 1, active: true  },
+
+  // ——— Broader assembly catch-alls (allow adjectives before the container word)
+  { re: /\bcombine[a-z]*[^.]{0,80}\b(bowl|plate|pan|dish|saucepan)\b/i, min: 2, active: true },
+  { re: /\bwhisk[a-z]*[^.]{0,60}\b(bowl|saucepan)\b/i, min: 2, active: true },
+  { re: /\bin\s+a\s+(large|medium|small)?\s*bowl[, ].*?(combine|whisk|stir|toss|mix)/i, min: 2, active: true },
+  { re: /\bmix\s+all\s+.*?(ingredients|dressing|salad)/i, min: 2, active: true },
+  { re: /\barrange[a-z]*\s+.*?in\s+a\s+.*?(pan|dish|sheet)/i, min: 4, active: true },
+  { re: /\bline[a-z]*\s+.*?(pan|sheet|dish)/i, min: 2, active: true },
+  { re: /\bheat[a-z]*\s+(the\s+)?(soup|broth|stock|liquid|sauce)/i, min: 4, active: true },
+  { re: /\bbefore\s+serving\b/i, min: 1, active: true },
+  { re: /\bmash[a-z]*\b/i, min: 3, active: true },          // generic mash
+  { re: /\bfor\s+(the\s+)?(meatballs|filling|sauce|topping|dressing|vinaigrette)/i, min: 3, active: true },
+  { re: /^\s*\*/, min: 0, active: true },                    // footnote/asterisk — not a real step
+  { re: /^\s*note:/i, min: 0, active: true }
+];
+
+function applyHeuristic(text) {
+  for (const h of STEP_HEURISTICS) {
+    if (h.re.test(text)) return { min: h.min, active: h.active, attention: h.attention };
+  }
+  return null;
+}
+
+// Mom's recipes use ½, ¼, etc. Normalize to decimals so the regex can match.
+const UNICODE_FRACTIONS = {
+  '½': 0.5,  '⅓': 1/3, '⅔': 2/3, '¼': 0.25, '¾': 0.75,
+  '⅕': 0.2,  '⅖': 0.4, '⅗': 0.6, '⅘': 0.8,
+  '⅙': 1/6,  '⅚': 5/6, '⅛': 0.125,'⅜': 0.375,'⅝': 0.625,'⅞': 0.875
+};
+
+function normalizeFractions(text) {
+  return text
+    // "2½" → "2.5"
+    .replace(/(\d+)\s*([½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])/g, (_, n, f) =>
+      String(parseInt(n, 10) + UNICODE_FRACTIONS[f]))
+    // bare "½" → "0.5"
+    .replace(/([½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])/g, f => String(UNICODE_FRACTIONS[f]));
+}
+
+function parseDuration(text) {
+  const normalized = normalizeFractions(text);
+  const matches = [];
+
+  // Word-number patterns mom's recipes use casually: "an hour",
+  // "half an hour", "a couple of hours". Treat them as explicit times.
+  if (/\bovernight\b/i.test(text)) matches.push(8 * 60);          // typical overnight rest
+  if (/\bhalf\s+an?\s+hour\b/i.test(text)) matches.push(30);
+  if (/\ba\s+couple\s+of\s+hours\b/i.test(text)) matches.push(120);
+  if (/\b(an|one)\s+hour\b/i.test(text)) matches.push(60);
+  if (/\ban\s+additional\s+hour\b/i.test(text)) matches.push(60);
+  if (/\ba\s+(few|couple\s+of)\s+minutes\b/i.test(text)) matches.push(3);
+  // Commit A — Pass 9 additions
+  if (/\bseveral\s+minutes\b/i.test(text)) matches.push(5);
+  if (/\b(a\s+moment|just\s+a\s+moment|briefly)\b/i.test(text)) matches.push(1);
+  if (/\ba\s+while\b/i.test(text)) matches.push(10);
+
+  // Hours range — "3 to 4 hours", "2-3 hrs"
+  const hourRangeRe = /(\d+(?:\.\d+)?)\s*(?:[–-]|to)\s*(\d+(?:\.\d+)?)\s*(?:hours?|hrs?)\b/gi;
+  const hourRe = /(\d+(?:\.\d+)?)\s*(?:hours?|hrs?)\b/gi;
+  const minRangeRe = /(\d+(?:\.\d+)?)\s*(?:[–-]|to)\s*(\d+(?:\.\d+)?)\s*(?:minutes?|min)\b/gi;
+  const minRe = /(\d+(?:\.\d+)?)\s*(?:minutes?|min)\b/gi;
+  // Commit A — Pass 9: sub-minute seconds (clamp to 1 min since scheduler is minute-precision)
+  const secRe = /(\d{1,3})\s*(?:seconds?|sec)\b/gi;
+
+  // Walk ranges first; mark consumed indices so the bare singles don't double-count.
+  const consumed = new Set();
+  let m;
+  while ((m = hourRangeRe.exec(normalized)) !== null) {
+    matches.push(((parseFloat(m[1]) + parseFloat(m[2])) / 2) * 60);
+    for (let i = m.index; i < m.index + m[0].length; i++) consumed.add(i);
+  }
+  while ((m = minRangeRe.exec(normalized)) !== null) {
+    matches.push((parseFloat(m[1]) + parseFloat(m[2])) / 2);
+    for (let i = m.index; i < m.index + m[0].length; i++) consumed.add(i);
+  }
+  while ((m = hourRe.exec(normalized)) !== null) {
+    if (!consumed.has(m.index)) matches.push(parseFloat(m[1]) * 60);
+  }
+  while ((m = minRe.exec(normalized)) !== null) {
+    if (!consumed.has(m.index)) matches.push(parseFloat(m[1]));
+  }
+  while ((m = secRe.exec(normalized)) !== null) {
+    matches.push(Math.max(1, parseFloat(m[1]) / 60));
+  }
+
+  if (!matches.length) return null;
+
+  // Commit A — Pass 9: at-least / up-to multipliers. Only apply when there is
+  // a single time match so the qualifier unambiguously attaches to it.
+  // Multi-time steps stay literal (safer than over-extending).
+  if (matches.length === 1) {
+    if (/\bat\s+least\b/i.test(text)) matches[0] *= 1.25;
+    if (/\bup\s+to\b/i.test(text))    matches[0] *= 0.90;
+  }
+
+  return Math.max(...matches);
+}
+
+function isPassiveText(text) {
+  return PASSIVE_PATTERNS.some(re => re.test(text));
+}
+
+function detectOven(text) {
+  const needsOven = OVEN_PATTERNS.some(re => re.test(text));
+  // Commit A — Pass 9 fix: a step can contain BOTH an oven temp and a
+  // thermometer reading (e.g., "Bake at 350°F until thermometer reads 165°F").
+  // Walk all three-digit temps in order; skip any whose surrounding 30-char
+  // window mentions thermometer/internal/registers/reads/hits/reaches —
+  // those are doneness readings, not oven settings. First oven-context match wins.
+  // Drop \b after F? — mom's recipes use both "375°F" and "350°." formats.
+  // The trailing word-boundary fails when ° is followed by punctuation
+  // (both non-word, so no boundary). Match the temp + optional ° + optional F.
+  const allMatches = [...text.matchAll(/(\d{3})\s*°\s*F?/gi)];
+  let ovenTemp = null;
+  for (const m of allMatches) {
+    // Check ONLY the 30-char window BEFORE the temp. Thermometer phrases
+    // always precede the temp ("thermometer reads 165", "internal temp 165").
+    // Checking after would wrongly skip oven temps in steps like
+    // "Bake at 350°F until thermometer reads 165°F" — the "thermometer" there
+    // applies to 165, not 350.
+    const before = text.slice(Math.max(0, m.index - 30), m.index).toLowerCase();
+    if (/\b(internal|thermometer|instant[- ]read|registers|reads|hits|reaches?)\b/.test(before)) continue;
+    ovenTemp = parseInt(m[1], 10);
+    break;
+  }
+  return {
+    needsOven,
+    ovenTemp,
+    isPreheat: /preheat/i.test(text)
+  };
+}
+
+function classifyStep(text) {
+  const oven = detectOven(text);
+  const explicit = parseDuration(text);
+  const passiveVerb = isPassiveText(text);
+
+  // Active/passive: preheat is always passive; otherwise passive only when an
+  // explicit time ≥ 5 min lines up with a passive verb. This avoids treating
+  // quick mentions like "set aside" inside an active step as hands-off.
+  let active;
+  if (oven.isPreheat) active = false;
+  else if (passiveVerb && explicit !== null && explicit >= 5) active = false;
+  else active = true;
+
+  // Duration: explicit time wins. Otherwise consult the heuristic table.
+  // Final fallback is the generic 2 min (active) / 5 min (passive) default.
+  let duration = explicit;
+  let heuristicAttention = null;
+  if (duration === null) {
+    const heuristic = applyHeuristic(text);
+    if (heuristic) {
+      duration = heuristic.min;
+      heuristicAttention = heuristic.attention;
+      // Only let a heuristic flip an already-active step to passive when it
+      // explicitly says so AND there's no passive verb argument otherwise —
+      // protects us from misclassifying nuance steps.
+      if (heuristic.active === false && !oven.isPreheat) active = false;
+    } else if (oven.isPreheat) duration = COOK_PLAN_DEFAULTS.preheatMin;
+    else if (!active) duration = COOK_PLAN_DEFAULTS.passiveMin;
+    else duration = COOK_PLAN_DEFAULTS.activeMin;
+  } else {
+    // Even when explicit time wins, still grab the heuristic's attention hint
+    // so we can lift caramelize / render / hollandaise to semi correctly.
+    const heuristic = applyHeuristic(text);
+    if (heuristic && heuristic.attention) heuristicAttention = heuristic.attention;
+  }
+
+  // Commit B — three-tier attention model.
+  //   active  → cook fully engaged (no overlap with other active >3 min)
+  //   semi    → tethered (cook free for ≤3 min micro-tasks; back every 3–5 min)
+  //   passive → cook fully free
+  // Resolution order:
+  //   1. Heuristic explicit `attention` field wins (e.g. caramelize → 'semi').
+  //   2. Otherwise: if the step has a semi-active modifier ("stirring
+  //      occasionally") AND a real duration (≥ 5 min), upgrade to 'semi'.
+  //   3. Otherwise: default from the binary active/passive computed above.
+  let attention;
+  if (heuristicAttention === 'semi' || heuristicAttention === 'active' || heuristicAttention === 'passive') {
+    attention = heuristicAttention;
+  } else if (!oven.isPreheat && duration >= 5 && detectSemi(text)) {
+    attention = 'semi';
+  } else {
+    attention = active ? 'active' : 'passive';
+  }
+
+  // Commit E — attach equipment detection so the scheduler can resolve conflicts
+  const equipment = detectEquipment(text);
+
+  return {
+    text,
+    duration,
+    active,
+    attention,
+    needsOven: oven.needsOven,
+    ovenTemp: oven.ovenTemp,
+    isPreheat: oven.isPreheat,
+    // Commit E fields
+    needsLargePot: equipment.needsLargePot,
+    largePotConsumesBurner: equipment.largePotConsumesBurner,
+    needsBurner: equipment.needsBurner,
+    needsMixer: equipment.needsMixer,
+    needsProcessor: equipment.needsProcessor,
+    needsBlender: equipment.needsBlender
+  };
+}
+
+// Split a single step into its constituent actions when the author crammed
+// multiple sentences into one entry. Conservative — splits only on
+// ". " followed by a capital letter, so times like "1.5 hours" and codes
+// like "350°F." stay intact.
+function splitStepIntoActions(text) {
+  const parts = text.split(/\.\s+(?=[A-Z])/);
+  if (parts.length === 1) return [text];
+  return parts.map((p, i) => {
+    let t = p.trim();
+    if (i < parts.length - 1 && !/[.!?]$/.test(t)) t += '.';
+    return t;
+  });
+}
+
+// Pass over a recipe's classified steps and propagate each preheat temp
+// forward — so a later "Bake" or "Braise" without an explicit temp inherits
+// the most recent preheat temp in the same recipe.
+function propagateOvenTemp(steps) {
+  let recent = null;
+  return steps.map(s => {
+    if (s.isPreheat && s.ovenTemp != null) recent = s.ovenTemp;
+    if (s.needsOven && s.ovenTemp == null && recent != null) {
+      return { ...s, ovenTemp: recent };
+    }
+    return s;
+  });
+}
+
+// recipes: [{ name, idx }] — minimal info; we read steps from RECIPES.
+// ovenCount: 1 or 2.
+// Returns array of timeline entries sorted by start time.
+function scheduleCook(selectedRecipes, ovenCount) {
+  const ovens = Array.from({ length: ovenCount }, () => ({ freeAt: 0, temp: null }));
+  // Pre-classify all steps. Compound steps (multi-sentence in the source) are
+  // split into their constituent actions so each gets its own duration and
+  // checkbox in the cook plan.
+  const recipesData = selectedRecipes.map(sel => {
+    const r = RECIPES[sel.idx];
+    const split = [];
+    r.steps.forEach((stepText, originalIdx) => {
+      const actions = splitStepIntoActions(stepText);
+      actions.forEach((actionText, subIdx) => {
+        split.push({
+          text: actionText,
+          originalStep: originalIdx + 1,
+          subIdx,
+          totalParts: actions.length
+        });
+      });
+    });
+    const classified = propagateOvenTemp(
+      split.map(item => ({ ...classifyStep(item.text), originalStep: item.originalStep, subIdx: item.subIdx, totalParts: item.totalParts }))
+    );
+    const totalDuration = classified.reduce((s, st) => s + st.duration, 0);
+    return { name: r.name, idx: sel.idx, steps: classified, totalDuration };
+  });
+  // Longest-first ensures the critical-path recipe drives the timeline
+  recipesData.sort((a, b) => b.totalDuration - a.totalDuration);
+
+  let cookFreeAt = 0;
+  // Commit B — when any recipe is in a semi-active step the cook is "tethered."
+  // New active steps > MAX_MICRO from any recipe must wait until the semi
+  // commitment ends. Micro-tasks (≤ 3 min) are still allowed in parallel.
+  let cookSemiUntil = 0;
+  const MAX_MICRO = 3;
+  // Commit E — hard-conflict resources: only one large pot and one stand mixer.
+  let largePotFreeAt = 0;
+  let mixerFreeAt = 0;
+  const recipeReady = recipesData.map(() => 0);
+  const recipeCursor = recipesData.map(() => 0);
+  const timeline = [];
+
+  while (true) {
+    const live = recipesData
+      .map((_, i) => i)
+      .filter(i => recipeCursor[i] < recipesData[i].steps.length);
+    if (!live.length) break;
+
+    let bestStart = Infinity, bestI = -1, bestOven = -1;
+    for (const i of live) {
+      const step = recipesData[i].steps[recipeCursor[i]];
+      let earliest = recipeReady[i];
+      if (step.active) earliest = Math.max(earliest, cookFreeAt);
+      // Block long active steps (>3 min) while a semi window is open.
+      if (step.attention === 'active' && step.duration > MAX_MICRO) {
+        earliest = Math.max(earliest, cookSemiUntil);
+      }
+      // Commit E — hard-conflict equipment: must wait for largePot / mixer to free
+      if (step.needsLargePot) earliest = Math.max(earliest, largePotFreeAt);
+      if (step.needsMixer)    earliest = Math.max(earliest, mixerFreeAt);
+      let ovenSlot = -1;
+      let ovenSwapCost = 0;
+      let sameTempShare = false;
+      if (step.needsOven) {
+        // Two dishes can share an oven at the same temp (typical home ovens fit
+        // a casserole + a crisp side-by-side). At a different temp, the new
+        // dish must wait until the oven clears, then a 5-min reheat penalty.
+        const TEMP_SWAP_PENALTY = 5;
+        let bestOvenScore = Infinity;
+        for (let j = 0; j < ovens.length; j++) {
+          const sameTemp = step.ovenTemp == null || ovens[j].temp == null
+                           || ovens[j].temp === step.ovenTemp;
+          let startIfHere, swap, share;
+          if (sameTemp) {
+            // Same temp (or oven unheated): join the oven now, no swap needed
+            startIfHere = earliest;
+            swap = 0;
+            share = true;
+          } else {
+            // Different temp: wait for oven, then reheat
+            startIfHere = Math.max(earliest, ovens[j].freeAt);
+            swap = TEMP_SWAP_PENALTY;
+            share = false;
+          }
+          const score = startIfHere + swap;
+          if (score < bestOvenScore) {
+            bestOvenScore = score;
+            ovenSlot = j;
+            ovenSwapCost = swap;
+            sameTempShare = share;
+          }
+        }
+        if (!sameTempShare) {
+          earliest = Math.max(earliest, ovens[ovenSlot].freeAt) + ovenSwapCost;
+        }
+      }
+      // Tie-break: longest recipe first (already in sort order, lower i)
+      if (earliest < bestStart || (earliest === bestStart && i < bestI)) {
+        bestStart = earliest;
+        bestI = i;
+        bestOven = ovenSlot;
+      }
+    }
+
+    const r = recipesData[bestI];
+    const step = r.steps[recipeCursor[bestI]];
+    const end = bestStart + step.duration;
+    if (step.active) cookFreeAt = end;
+    if (step.attention === 'semi') cookSemiUntil = Math.max(cookSemiUntil, end);
+    // Commit E — equipment commitments
+    if (step.needsLargePot) largePotFreeAt = end;
+    if (step.needsMixer)    mixerFreeAt = end;
+    if (step.needsOven && bestOven >= 0) {
+      const o = ovens[bestOven];
+      const wasSameTemp = o.temp == null || step.ovenTemp == null || o.temp === step.ovenTemp;
+      // Share-and-extend: same-temp dishes raise freeAt to the latest end time.
+      // Different temp: oven is now committed to this step's temp/end.
+      o.freeAt = wasSameTemp ? Math.max(o.freeAt, end) : end;
+      if (step.ovenTemp != null) o.temp = step.ovenTemp;
+    }
+    recipeReady[bestI] = end;
+    timeline.push({
+      recipe: r.name,
+      recipeIdx: r.idx,
+      // stepNum is now the position in the split-step list. For display we
+      // use originalStep + subIdx so mom can map back to the recipe's
+      // numbered list, even when one source step expands into 3-4 actions.
+      stepNum: recipeCursor[bestI] + 1,
+      start: bestStart,
+      end,
+      oven: bestOven,
+      ...step
+    });
+    recipeCursor[bestI]++;
+  }
+
+  const sorted = timeline.sort((a, b) => a.start - b.start);
+  sorted._kitchenLoad = computeKitchenLoad(sorted);
+  return decorateHints(sorted);
+}
+
+// Commit E — post-hoc soft-conflict analysis. Walks the sorted timeline and
+// computes peak concurrent burner usage + the largePot occupancy window.
+// Used by the end-of-plan "Kitchen load notes" summary. No scheduler change.
+function computeKitchenLoad(timeline) {
+  // Peak concurrent burners: walk events
+  const burnerEvents = [];
+  let largePotStart = null, largePotEnd = null;
+  for (const t of timeline) {
+    if (t.needsBurner) {
+      burnerEvents.push({ t: t.start, d: +1 });
+      burnerEvents.push({ t: t.end,   d: -1 });
+    }
+    if (t.needsLargePot) {
+      if (largePotStart === null) largePotStart = t.start;
+      largePotEnd = t.end;
+    }
+  }
+  burnerEvents.sort((a, b) => a.t - b.t || a.d - b.d);
+  let peak = 0, cur = 0;
+  for (const e of burnerEvents) { cur += e.d; if (cur > peak) peak = cur; }
+  return {
+    peakBurners: peak,
+    largePotWindow: largePotStart === null ? null : { start: largePotStart, end: largePotEnd },
+    usesMixer:     timeline.some(t => t.needsMixer),
+    usesProcessor: timeline.some(t => t.needsProcessor),
+    usesBlender:   timeline.some(t => t.needsBlender)
+  };
+}
+
+// Commit C — schedule hints. For each long passive/semi window (≥ 15 min),
+// find timeline entries from OTHER recipes that fall inside it and attach a
+// human-readable "while this happens, do steps X–Y of [recipe]" annotation.
+// Renders inline under the step text.
+function decorateHints(timeline) {
+  for (const w of timeline) {
+    const isLongPause = (w.attention === 'passive' || w.attention === 'semi') && w.duration >= 15;
+    if (!isLongPause) continue;
+    const overlap = timeline.filter(s =>
+      s !== w &&
+      s.recipe !== w.recipe &&
+      s.start >= w.start &&
+      s.end   <= w.end
+    );
+    if (!overlap.length) continue;
+    // Group by recipe; find min/max step numbers (use originalStep from splitter when present)
+    const byRecipe = {};
+    for (const s of overlap) {
+      const n = s.originalStep || s.stepNum;
+      if (!byRecipe[s.recipe]) byRecipe[s.recipe] = [];
+      byRecipe[s.recipe].push(n);
+    }
+    const phrases = Object.entries(byRecipe).map(([name, nums]) => {
+      const min = Math.min(...nums);
+      const max = Math.max(...nums);
+      const range = min === max ? `step ${min}` : `steps ${min}–${max}`;
+      return `${range} of ${name}`;
+    });
+    w.hint = `While this happens (${formatDuration(w.duration)}), do ${phrases.join(' and ')}.`;
+  }
+  return timeline;
+}
+
+function formatDuration(min) {
+  if (min <= 0) return 'now';
+  if (min < 60) return `${Math.round(min)} min`;
+  const h = Math.floor(min / 60);
+  const m = Math.round(min - h * 60);
+  return m === 0 ? `${h} hr` : `${h} hr ${m} min`;
+}
+
+// ——— Merged-cook plan: persistence + rendering ———
+const COOK_PLAN_LS_KEY = 'kitchen.cookPlan.v1';
+const cookPlanState = { ovenCount: 1, checked: {} };
+
+function loadCookPlanState() {
+  try {
+    const raw = localStorage.getItem(COOK_PLAN_LS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (parsed.ovenCount === 1 || parsed.ovenCount === 2) cookPlanState.ovenCount = parsed.ovenCount;
+    if (parsed.checked && typeof parsed.checked === 'object') cookPlanState.checked = parsed.checked;
+  } catch (e) { console.warn('Failed to load cook plan state', e); }
+}
+
+function saveCookPlanState() {
+  try {
+    localStorage.setItem(COOK_PLAN_LS_KEY, JSON.stringify(cookPlanState));
+  } catch (e) { console.warn('Failed to save cook plan state', e); }
+}
+
+function stepKey(entry) {
+  // Stable key so checked-state survives reschedules and split-action changes.
+  // Single-action steps stay at `recipe#N` for back-compat; multi-action steps
+  // get a `.subIdx` suffix.
+  const tail = entry.totalParts && entry.totalParts > 1
+    ? `${entry.originalStep}.${entry.subIdx}`
+    : String(entry.originalStep || entry.stepNum);
+  return `${entry.recipe}#${tail}`;
+}
+
+// "Step 3" for single-action; "Step 3a / 3b / 3c" for split actions.
+function stepLabel(entry) {
+  const n = entry.originalStep || entry.stepNum;
+  if (!entry.totalParts || entry.totalParts < 2) return `Step ${n}`;
+  return `Step ${n}${String.fromCharCode(97 + entry.subIdx)}`;
+}
+
+// Commit D — Predicate: is this step safe to do up-front before any heat
+// (mise en place style)? Filters for prep verbs and excludes anything that
+// depends on an already-cooked product, applies heat, OR is an assembly
+// step that depends on a prior placement (e.g., "sprinkle over the apples").
+function isFrontLoadable(stepText) {
+  const t = stepText.toLowerCase();
+  // Negative: step depends on a prior heat-cooked product
+  if (/\b(cooked|warm|hot|cooled|browned|seared|sautéed|sauteed|toasted)\s+(chicken|beef|pork|onion|garlic|milk|water|broth|stock|pasta|rice|noodles|vegetables)\b/.test(t)) return false;
+  // Negative: heat-applying verbs (this step IS cooking, not prep)
+  if (/\b(bake|roast|broil|simmer|braise|preheat|saut[eé]|sear|brown|boil|fry|render|caramelize|deglaze)\b/.test(t)) return false;
+  // Negative: assembly that depends on a prior placement / mid-recipe state
+  // ("sprinkle over the apples", "pour into the dish", "spread over the layer",
+  // "top with", "drizzle over"). Pulling these forward breaks the recipe.
+  if (/\b(sprinkle|pour|spread|drizzle|scatter|spoon|top|layer|arrange|return)\s+(over|into|onto|on\s+top|with|on\s+the)\b/.test(t)) return false;
+  if (/\bdrain\b/.test(t)) return false;
+  // Positive: a pure prep verb
+  return /\b(chop|dice|mince|slice|peel|grate|zest|juice|measure|sift|grease|line|butter|trim|whisk\s+together|score)\b/.test(t);
+}
+
+// Commit D — Partition timeline into prep + cook blocks. A step goes to prep
+// IFF isFrontLoadable() returns true. The negative-signals filter inside
+// isFrontLoadable (cooked/warm/hot/browned + chicken/meat/etc., plus heat
+// verbs) catches steps that would be wrong to move ahead of cooking. So
+// "Sift the flour" pulls up to prep even though it appears at step 3 of a
+// recipe whose step 1 is "Preheat oven" — preheat stays in the cook block,
+// sifting moves to prep, no ordering hazard because sifting doesn't depend
+// on the oven being hot.
+function partitionTimeline(timeline) {
+  const prep = [], cook = [];
+  for (const t of timeline) {
+    if (isFrontLoadable(t.text)) prep.push(t);
+    else cook.push(t);
+  }
+  return { prep, cook };
+}
+
+// Commit D — detect "may be doubled / halve" in any of the selected recipes
+function selectedMentionsScaling(selected) {
+  return selected.some(s => {
+    const r = RECIPES[s.idx];
+    if (!r || !r.steps) return false;
+    return r.steps.some(step =>
+      /\b(may\s+be\s+doubled|double\s+the\s+recipe|recipe\s+may\s+be\s+doubled|halve\s+the\s+recipe)\b/i.test(step)
+    );
+  });
+}
+
+// Commit D — extracted step-row renderer so prep + cook blocks share one HTML pattern
+function renderCookPlanStepHTML(t, single) {
+  const k = stepKey(t);
+  const checked = cookPlanState.checked[k] === true;
+  const recipeTag = single ? '' : `<span class="recipe-tag">${t.recipe}</span>`;
+  const typeBadge =
+      t.attention === 'semi'
+        ? `<span class="badge semi">Tend occasionally · ${formatDuration(t.duration)}</span>`
+        : t.attention === 'passive' || !t.active
+          ? `<span class="badge passive">Hands-off · ${formatDuration(t.duration)}</span>`
+          : `<span class="badge active">Hands-on</span>`;
+  const ovenBadge = t.needsOven
+    ? `<span class="badge oven">🔥 Oven ${cookPlanState.ovenCount === 2 && t.oven >= 0 && !single ? '#' + (t.oven + 1) + ' ' : ''}${t.ovenTemp ? '· ' + t.ovenTemp + '°F' : ''}</span>`
+    : '';
+  const hintEl = t.hint ? `<div class="cook-plan-step-hint">${t.hint}</div>` : '';
+  return `
+    <li class="cook-plan-step ${checked ? 'checked' : ''}" data-key="${k}">
+      <button type="button" class="cook-plan-step-check" aria-label="${checked ? 'Uncheck' : 'Check'} step">✓</button>
+      <div class="cook-plan-step-body">
+        <div class="cook-plan-step-meta">
+          ${recipeTag}
+          <span>${stepLabel(t)}</span>
+          ${typeBadge}
+          ${ovenBadge}
+        </div>
+        <div class="cook-plan-step-text">${t.text}</div>
+        ${hintEl}
+      </div>
+    </li>`;
+}
+
+function renderCookPlan() {
+  const stepsEl    = document.getElementById('cookPlanSteps');
+  const metaEl     = document.getElementById('cookPlanMeta');
+  const headingEl  = document.querySelector('#cookPlanSection .section-intro h2');
+  const subtitleEl = document.getElementById('cookPlanSubtitle');
+  const controlsEl = document.querySelector('#cookPlanSection .cook-plan-controls');
+  const warningEl  = document.getElementById('cookPlanWarning');
+  const prepEl     = document.getElementById('cookPlanPrep');
+  const prepStepsEl = document.getElementById('cookPlanPrepSteps');
+  if (!stepsEl || !metaEl) return;
+
+  const selected = cookingState.recipes
+    .map(name => ({ idx: RECIPES.findIndex(r => r.name === name), name }))
+    .filter(s => s.idx >= 0);
+
+  if (selected.length === 0) {
+    if (headingEl)  headingEl.textContent  = '🍳 Cook Now';
+    if (subtitleEl) subtitleEl.textContent = 'Add a recipe to your cooking tray to start cooking.';
+    if (controlsEl) controlsEl.style.display = 'none';
+    metaEl.innerHTML = '';
+    stepsEl.innerHTML = '';
+    return;
+  }
+
+  // Adapt copy + chrome to single-recipe vs merged-recipe modes
+  const single = selected.length === 1;
+  if (headingEl) {
+    headingEl.textContent = single ? `🍳 ${selected[0].name}` : '🪄 Cooking together';
+  }
+  if (subtitleEl) {
+    subtitleEl.textContent = single
+      ? 'A step-by-step plan with realistic timing. Check off each step as you go.'
+      : 'A merged timeline that slots prep work into your passive windows. Check off each step as you finish.';
+  }
+  // Oven count only changes the schedule when 2+ recipes compete for the oven;
+  // hide the toggle for a single recipe to keep the UI uncluttered.
+  if (controlsEl) controlsEl.style.display = single ? 'none' : '';
+
+  if (!single) {
+    document.querySelectorAll('.cook-plan-oven-btn').forEach(b =>
+      b.classList.toggle('active', parseInt(b.dataset.ovens, 10) === cookPlanState.ovenCount));
+  }
+
+  const timeline = scheduleCook(selected, cookPlanState.ovenCount);
+  const totalMin = timeline.length ? Math.max(...timeline.map(t => t.end)) : 0;
+
+  metaEl.innerHTML = single
+    ? `Ready in <strong>${formatDuration(totalMin)}</strong>`
+    : `Cooking <strong>${selected.map(s => s.name).join('</strong> + <strong>')}</strong> — ready in <strong>${formatDuration(totalMin)}</strong>`;
+
+  // Commit D — scaling warning banner (visible only if a recipe mentions scaling)
+  if (warningEl) {
+    if (selectedMentionsScaling(selected)) {
+      warningEl.innerHTML = `<strong>⚠ Scaling notice:</strong> one of these recipes mentions doubling/halving. Prep time scales linearly with quantity; bake/roast time barely changes (≈ cube root of volume). Preheat is unchanged. Adjust mentally if you're scaling.`;
+      warningEl.hidden = false;
+    } else {
+      warningEl.hidden = true;
+    }
+  }
+
+  // Commit D — partition timeline into prep + cook blocks
+  const { prep, cook } = partitionTimeline(timeline);
+  if (prepEl && prepStepsEl) {
+    if (prep.length > 0) {
+      prepStepsEl.innerHTML = prep.map(t => renderCookPlanStepHTML(t, single)).join('');
+      prepEl.hidden = false;
+    } else {
+      prepEl.hidden = true;
+      prepStepsEl.innerHTML = '';
+    }
+  }
+  stepsEl.innerHTML = cook.map(t => renderCookPlanStepHTML(t, single)).join('');
+
+  // Commit E — end-of-plan kitchen load summary
+  const loadEl = document.getElementById('cookPlanKitchenLoad');
+  if (loadEl) {
+    const load = timeline._kitchenLoad;
+    if (!load || (load.peakBurners <= 1 && !load.largePotWindow && !load.usesMixer && !load.usesProcessor && !load.usesBlender)) {
+      loadEl.hidden = true;
+    } else {
+      const BURNERS_AVAILABLE = 4;
+      const bits = [];
+      bits.push(`<strong>Kitchen load notes</strong>`);
+      if (load.peakBurners > 0) {
+        const cls = load.peakBurners > BURNERS_AVAILABLE ? 'load-warning' : '';
+        const msg = load.peakBurners > BURNERS_AVAILABLE
+          ? `<span class="${cls}">Peak stovetop use: ${load.peakBurners} of ${BURNERS_AVAILABLE} burners — this plan would need more burners than you have. Consider delaying a stovetop step.</span>`
+          : `Peak stovetop use: ${load.peakBurners} of ${BURNERS_AVAILABLE} burners.`;
+        bits.push(msg);
+      }
+      if (load.largePotWindow) {
+        bits.push(`Large pot needed from ${formatDuration(load.largePotWindow.start)} to ${formatDuration(load.largePotWindow.end)}.`);
+      }
+      if (load.usesMixer)     bits.push('Stand mixer used; sharing handled in the schedule.');
+      if (load.usesProcessor) bits.push('Food processor used briefly; no blocking conflicts.');
+      if (load.usesBlender)   bits.push('Blender used briefly; no blocking conflicts.');
+      loadEl.innerHTML = bits.map((s, i) => i === 0 ? s : `<div>· ${s}</div>`).join('');
+      loadEl.hidden = false;
+    }
+  }
+
+  // Commit D — wire check buttons across BOTH prep and cook blocks
+  document.querySelectorAll('#cookPlanSection .cook-plan-step').forEach(li => {
+    const checkBtn = li.querySelector('.cook-plan-step-check');
+    if (!checkBtn) return;
+    const toggle = () => {
+      const k = li.dataset.key;
+      if (cookPlanState.checked[k]) delete cookPlanState.checked[k];
+      else cookPlanState.checked[k] = true;
+      li.classList.toggle('checked');
+      saveCookPlanState();
+    };
+    checkBtn.addEventListener('click', toggle);
+  });
+}
+
+// Wire the oven-count toggle
+document.querySelectorAll('.cook-plan-oven-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const n = parseInt(b.dataset.ovens, 10);
+    if (n !== 1 && n !== 2) return;
+    cookPlanState.ovenCount = n;
+    saveCookPlanState();
+    renderCookPlan();
+  });
+});
+
+document.getElementById('cookPlanBack').addEventListener('click', () => activate('all'));
+
+loadCookPlanState();
+
+loadShopping();
+updateCartFab();
+
+// Boot: open with the unified "All" view populated, but stay at the top of the page
+activate('all', false);
+
+function runSearch() {
+  const rawQ = searchEl.value.trim();
+  const q = rawQ.toLowerCase();
+  if (!q) {
+    const activeTab = document.querySelector('.tab.active');
+    activate(activeTab ? activeTab.dataset.cuisine : 'all');
+    return;
+  }
+  document.querySelectorAll('#sections .section').forEach(s => s.style.display = 'none');
+  const filter = chipMode ? matchesKeywords : matches;
+  const hits = RECIPES.filter(r => filter(r, q));
+  const displayQuery = rawQ.replace(/\b\w/g, c => c.toUpperCase());
+  renderUnifiedGrid(
+    hits,
+    hits.length
+      ? `${hits.length} ${hits.length === 1 ? 'recipe' : 'recipes'} across every cuisine — try a flavor, mood, ingredient, or occasion.`
+      : '',
+    `Showing Results for ${displayQuery}`
+  );
+  document.getElementById('searchResults').hidden = false;
+  emptyEl.style.display = hits.length ? 'none' : 'block';
+}
+</script>
+
+<script>
+  // Register the offline service worker. Feature-checked so older browsers ignore it.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch((err) => {
+        console.warn('Service worker registration failed:', err);
+      });
+    });
+  }
+</script>
+</body>
+</html>
